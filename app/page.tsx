@@ -67,25 +67,52 @@ export default function Home() {
   return (
     <div className="bg-[#04113A] text-white min-h-screen overflow-x-hidden">
 
-      {/* PREMIUM BACKGROUND */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-500/20 blur-[180px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/10 blur-[160px] rounded-full" />
+      {/* BACKGROUND */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-150px] left-[-150px] w-[700px] h-[700px] bg-blue-500/15 blur-[180px] rounded-full" />
+        <div className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] bg-white/10 blur-[180px] rounded-full" />
       </div>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+      <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20">
 
-          {/* TEXT */}
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
+
+          {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8 }}
           >
-            <p className="uppercase tracking-[0.35em] text-white/60 mb-5 text-sm">
-              Exclusive P2P Community
-            </p>
+
+            {/* PREMIUM BADGE */}
+            <div className="inline-flex items-center gap-3 bg-white/10 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8">
+              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+
+              <span className="uppercase tracking-[0.28em] text-xs text-white/70">
+                Exclusive Private Community
+              </span>
+            </div>
+
+            {/* PREMIUM LOGO */}
+            <motion.div
+              animate={{ y: [0, -4, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+              className="mb-8"
+            >
+              <div className="relative inline-flex items-center justify-center w-[120px] h-[120px] rounded-[34px] bg-white/10 backdrop-blur-2xl border border-white/10 shadow-[0_0_80px_rgba(255,255,255,0.06)] overflow-hidden">
+
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+
+                <span className="text-5xl font-black tracking-tight z-10">
+                  TMD
+                </span>
+              </div>
+            </motion.div>
 
             <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-6">
               T.M.D <br />
@@ -110,10 +137,11 @@ export default function Home() {
             </a>
           </motion.div>
 
-          {/* WALLETS */}
+          {/* RIGHT */}
           <div className="relative flex items-center justify-center gap-6 flex-wrap">
 
-            {/* WHITE WALLET */}
+            <div className="absolute w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full" />
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -129,7 +157,6 @@ export default function Home() {
               />
             </motion.div>
 
-            {/* BLUE WALLET */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -156,50 +183,26 @@ export default function Home() {
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-          {/* WHITE */}
-          <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
-            <img
-              src="/photo2131.png"
-              alt="White Wallet"
-              className="rounded-[24px] mb-8 w-full"
-            />
-
+          <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
+            <img src="/photo2131.png" className="rounded-[24px] mb-8 w-full" />
             <h3 className="text-4xl font-black mb-4">
               WHITE WALLET
             </h3>
-
-            <p className="text-white/70">
-              Luxury minimal premium edition.
-            </p>
           </div>
 
-          {/* BLUE */}
-          <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
-            <img
-              src="/photo2121.png"
-              alt="Blue Wallet"
-              className="rounded-[24px] mb-8 w-full"
-            />
-
+          <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
+            <img src="/photo2121.png" className="rounded-[24px] mb-8 w-full" />
             <h3 className="text-4xl font-black mb-4">
               BLUE WALLET
             </h3>
-
-            <p className="text-white/70">
-              Premium edition for active members.
-            </p>
           </div>
 
         </div>
       </section>
 
-      {/* SOON + COUNTDOWN */}
-      <section
-        id="soon"
-        className="px-6 md:px-20 py-28"
-      >
+      {/* SOON */}
+      <section id="soon" className="px-6 md:px-20 py-28">
         <div className="max-w-5xl mx-auto text-center">
-
           <p className="uppercase tracking-[0.4em] text-white/50 mb-4">
             Exclusive Access
           </p>
@@ -209,8 +212,6 @@ export default function Home() {
           </h2>
 
           <p className="text-white/70 text-xl mb-12">
-            Application system will open soon.
-            <br />
             Summer 2026 Countdown
           </p>
 
@@ -221,6 +222,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70">
         <div className="flex justify-between flex-col md:flex-row gap-8 max-w-7xl mx-auto">
+
           <div>
             <div className="font-black text-2xl text-white">
               T.M.D COMMUNITY
