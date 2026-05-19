@@ -49,113 +49,46 @@ export default function Home() {
           </motion.div>
 
           {/* PREMIUM WALLETS */}
-          <div className="relative flex items-center justify-center gap-6 flex-wrap">
+<div className="relative flex items-center justify-center gap-6 flex-wrap">
 
-            {/* WHITE WALLET */}
-            <div className="relative flex items-center justify-center">
-              
-              {/* GREY PREMIUM GLOW */}
-              <div className="absolute w-[320px] h-[320px] bg-gray-300/30 blur-[90px] rounded-full" />
+  {/* WHITE WALLET */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    whileHover={{ y: -6, scale: 1.02 }}
+    className="relative flex items-center justify-center"
+  >
+    {/* premium glow */}
+    <div className="absolute w-[260px] h-[260px] bg-gray-300/20 blur-[60px] rounded-full" />
 
-              <motion.img
-                src="/photo2131.png"
-                alt="White Wallet"
-                className="relative z-10 w-[280px] drop-shadow-[0_25px_70px_rgba(255,255,255,0.25)]"
-                animate={{
-                  y: [-25, 20, -25],
-                  rotate: [-4, 4, -4]
-                }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-              />
-            </div>
+    <img
+      src="/photo2131.png"
+      alt="White Wallet"
+      className="relative z-10 w-[240px] md:w-[280px] drop-shadow-[0_20px_50px_rgba(255,255,255,0.18)] select-none"
+      draggable="false"
+    />
+  </motion.div>
 
-            {/* BLUE WALLET */}
-            <div className="relative flex items-center justify-center">
-              
-              {/* BLUE GLOW */}
-              <div className="absolute w-[320px] h-[320px] bg-blue-500/20 blur-[100px] rounded-full" />
+  {/* BLUE WALLET */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, delay: 0.15 }}
+    whileHover={{ y: -6, scale: 1.02 }}
+    className="relative flex items-center justify-center"
+  >
+    {/* blue glow */}
+    <div className="absolute w-[260px] h-[260px] bg-blue-500/15 blur-[70px] rounded-full" />
 
-              <motion.img
-                src="/photo2121.png"
-                alt="Blue Wallet"
-                className="relative z-10 w-[280px] drop-shadow-[0_25px_80px_rgba(37,99,235,0.35)]"
-                animate={{
-                  y: [-20, 25, -20],
-                  rotate: [5, -3, 5]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 1
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PREMIUM LINE */}
-<section className="bg-white text-[#04113A] rounded-t-[60px] px-6 md:px-20 py-28 relative z-10">
-  <h2 className="text-5xl font-black mb-14 text-center">
-    PREMIUM LINE
-  </h2>
-
-  <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
-    {/* WHITE WALLET */}
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl relative overflow-hidden"
-    >
-      {/* premium blur */}
-      <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-white/10 blur-[80px] rounded-full" />
-
-      <img
-        src="/photo2131.png"
-        alt="White Wallet"
-        className="relative z-10 rounded-[24px] mb-8 w-full"
-      />
-
-      <h3 className="text-4xl font-black mb-4 relative z-10">
-        WHITE WALLET
-      </h3>
-
-      <p className="text-white/70 relative z-10">
-        Luxury minimal premium edition.
-      </p>
-    </motion.div>
-
-    {/* BLUE WALLET */}
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl relative overflow-hidden"
-    >
-      {/* blue glow */}
-      <div className="absolute bottom-0 left-0 w-[250px] h-[250px] bg-blue-500/20 blur-[90px] rounded-full" />
-
-      <img
-        src="/photo2121.png"
-        alt="Blue Wallet"
-        className="relative z-10 rounded-[24px] mb-8 w-full"
-      />
-
-      <h3 className="text-4xl font-black mb-4 relative z-10">
-        BLUE WALLET
-      </h3>
-
-      <p className="text-white/70 relative z-10">
-        Premium edition for active members.
-      </p>
-    </motion.div>
-
-  </div>
-</section>
-
+    <img
+      src="/photo2121.png"
+      alt="Blue Wallet"
+      className="relative z-10 w-[240px] md:w-[280px] drop-shadow-[0_20px_60px_rgba(37,99,235,0.20)] select-none"
+      draggable="false"
+    />
+  </motion.div>
+</div>
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70">
         <div className="flex justify-between flex-col md:flex-row gap-8 max-w-7xl mx-auto">
@@ -188,5 +121,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
-}
+
+  
