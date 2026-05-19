@@ -1,16 +1,83 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+
+function Countdown() {
+  const calculateTimeLeft = () => {
+    const targetDate = new Date('2026-08-31T23:59:59').getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const items = [
+    ['Days', timeLeft.days],
+    ['Hours', timeLeft.hours],
+    ['Minutes', timeLeft.minutes],
+    ['Seconds', timeLeft.seconds],
+  ];
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
+      {items.map(([label, value]) => (
+        <div
+          key={String(label)}
+          className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[36px] py-10"
+        >
+          <div className="text-5xl md:text-6xl font-black text-white">
+            {value as number}
+          </div>
+
+          <div className="text-white/50 uppercase tracking-[0.25em] text-sm mt-3">
+            {label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
     <div className="bg-[#04113A] text-white min-h-screen overflow-x-hidden">
+
+      {/* PREMIUM BACKGROUND */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-500/20 blur-[180px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/10 blur-[160px] rounded-full" />
+      </div>
+
       {/* HERO */}
       <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-white/10 blur-[120px] rounded-full" />
-
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+
+          {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -25,7 +92,7 @@ export default function Home() {
               COMMUNITY
             </h1>
 
-            <h2 className="text-2xl md:text-4xl text-white/80 mb-6">
+            <h2 className="text-2xl md:text-4xl text-white/80 mb-6 leading-tight">
               Картхолдер который будет
               <br />
               вас выделять
@@ -36,16 +103,17 @@ export default function Home() {
             </p>
 
             <a
-              href="#apply"
-              className="bg-white text-[#04113A] rounded-2xl px-8 py-4 font-bold inline-block hover:scale-105 transition-transform"
+              href="#soon"
+              className="bg-white text-[#04113A] rounded-2xl px-8 py-5 font-black inline-block hover:scale-105 transition-all duration-300"
             >
-              APPLY NOW
+              SOON
             </a>
           </motion.div>
 
-          {/* КАРТХОЛДЕРЫ БЕЗ ЛАГАЮЩИХ АНИМАЦИЙ */}
-          <div className="flex gap-8 justify-center flex-wrap">
-            {/* Белый */}
+          {/* WALLETS */}
+          <div className="relative flex items-center justify-center gap-6 flex-wrap">
+
+            {/* WHITE WALLET */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -57,11 +125,11 @@ export default function Home() {
               <img
                 src="/photo2131.png"
                 alt="White Wallet"
-                className="relative z-10 w-[280px] drop-shadow-2xl"
+                className="relative z-10 w-[240px] md:w-[280px] drop-shadow-2xl"
               />
             </motion.div>
 
-            {/* Синий */}
+            {/* BLUE WALLET */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -73,7 +141,7 @@ export default function Home() {
               <img
                 src="/photo2121.png"
                 alt="Blue Wallet"
-                className="relative z-10 w-[280px] drop-shadow-2xl"
+                className="relative z-10 w-[240px] md:w-[280px] drop-shadow-2xl"
               />
             </motion.div>
           </div>
@@ -81,89 +149,73 @@ export default function Home() {
       </section>
 
       {/* PREMIUM LINE */}
-      <section className="bg-white text-[#04113A] rounded-t-[50px] px-6 md:px-20 py-28 -mt-10 relative z-10">
-        <h2 className="text-5xl font-black mb-12 text-center">
+      <section className="bg-white text-[#04113A] rounded-t-[60px] px-6 md:px-20 py-28 relative z-10">
+        <h2 className="text-5xl font-black mb-14 text-center">
           PREMIUM LINE
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+          {/* WHITE */}
+          <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
             <img
               src="/photo2131.png"
               alt="White Wallet"
               className="rounded-[24px] mb-8 w-full"
             />
+
             <h3 className="text-4xl font-black mb-4">
               WHITE WALLET
             </h3>
+
             <p className="text-white/70">
-              Luxury minimal edition.
+              Luxury minimal premium edition.
             </p>
           </div>
 
-          <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
+          {/* BLUE */}
+          <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
             <img
               src="/photo2121.png"
               alt="Blue Wallet"
               className="rounded-[24px] mb-8 w-full"
             />
+
             <h3 className="text-4xl font-black mb-4">
               BLUE WALLET
             </h3>
+
             <p className="text-white/70">
               Premium edition for active members.
             </p>
           </div>
+
         </div>
       </section>
 
-      {/* FORM */}
-      <section id="apply" className="px-6 md:px-20 py-24 bg-[#04113A]">
-        <h2 className="text-5xl font-black text-center mb-12">
-          APPLY TO COMMUNITY
-        </h2>
+      {/* SOON + COUNTDOWN */}
+      <section
+        id="soon"
+        className="px-6 md:px-20 py-28"
+      >
+        <div className="max-w-5xl mx-auto text-center">
 
-        <form
-          action="https://formsubmit.co/tmdsupport1@gmail.com"
-          method="POST"
-          className="max-w-2xl mx-auto grid gap-4"
-        >
-          <input type="hidden" name="_captcha" value="false" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://tmd-community.vercel.app"
-          />
+          <p className="uppercase tracking-[0.4em] text-white/50 mb-4">
+            Exclusive Access
+          </p>
 
-          <input
-            name="email"
-            type="email"
-            required
-            placeholder="Your Email"
-            className="bg-white/10 p-5 rounded-2xl border border-white/10"
-          />
+          <h2 className="text-5xl md:text-7xl font-black mb-6">
+            SOON
+          </h2>
 
-          <input
-            name="telegram"
-            required
-            placeholder="@username Telegram"
-            className="bg-white/10 p-5 rounded-2xl border border-white/10"
-          />
+          <p className="text-white/70 text-xl mb-12">
+            Application system will open soon.
+            <br />
+            Summer 2026 Countdown
+          </p>
 
-          <textarea
-            name="message"
-            required
-            placeholder="Почему хотите присоединиться?"
-            className="bg-white/10 p-5 rounded-2xl border border-white/10 min-h-[160px]"
-          />
-
-          <button
-            type="submit"
-            className="bg-white text-[#04113A] rounded-2xl py-5 font-black"
-          >
-            SEND APPLICATION
-          </button>
-        </form>
+          <Countdown />
+        </div>
       </section>
 
       {/* FOOTER */}
@@ -173,6 +225,10 @@ export default function Home() {
             <div className="font-black text-2xl text-white">
               T.M.D COMMUNITY
             </div>
+
+            <p className="text-sm mt-1">
+              Exclusive P2P CartHolders
+            </p>
           </div>
 
           <div>
@@ -187,7 +243,9 @@ export default function Home() {
               Telegram Support
             </a>
 
-            <p>tmdsupport1@gmail.com</p>
+            <p>
+              tmdsupport1@gmail.com
+            </p>
           </div>
         </div>
       </footer>
