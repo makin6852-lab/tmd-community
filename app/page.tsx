@@ -185,24 +185,24 @@ export default function Home() {
           <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
             <img
               src="/photo2131.png"
-              alt="White Wallet"
+              alt="BLUE Wallet"
               className="rounded-[24px] mb-8 w-full"
             />
 
             <h3 className="text-4xl font-black">
-              WHITE WALLET
+              BLUE WALLET
             </h3>
           </div>
 
           <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
             <img
               src="/photo2121.png"
-              alt="Blue Wallet"
+              alt="WHITE Wallet"
               className="rounded-[24px] mb-8 w-full"
             />
 
             <h3 className="text-4xl font-black">
-              BLUE WALLET
+              WHITE WALLET
             </h3>
           </div>
 
