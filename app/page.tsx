@@ -1,65 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-function Countdown() {
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-08-31T23:59:59').getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
-    if (difference <= 0) {
-      return {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
-    }
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
-      {[
-        ['Days', timeLeft.days],
-        ['Hours', timeLeft.hours],
-        ['Minutes', timeLeft.minutes],
-        ['Seconds', timeLeft.seconds],
-      ].map(([label, value]) => (
-        <div
-          key={String(label)}
-          className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[34px] py-10 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
-        >
-          <div className="text-5xl md:text-6xl font-black">
-            {value as number}
-          </div>
-
-          <div className="text-white/50 uppercase tracking-[0.25em] text-sm mt-3">
-            {label}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <>
@@ -119,7 +59,7 @@ export default function Home() {
               </h2>
 
               <p className="text-white/60 text-lg max-w-xl mb-10">
-                Premium CartHolders • Private Community • Luxury Access
+                Founders Series • Private Community • Luxury Access
               </p>
 
               <a
@@ -190,8 +130,6 @@ export default function Home() {
 
         <section className="relative px-6 md:px-20 py-32 z-10 overflow-hidden">
 
-          {/* BACKGROUND */}
-
           <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff] via-[#edf4ff] to-[#dfeeff]" />
 
           <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-[140px]" />
@@ -199,8 +137,6 @@ export default function Home() {
           <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-[140px]" />
 
           <div className="relative z-10 max-w-7xl mx-auto">
-
-            {/* TITLE */}
 
             <div className="text-center mb-20">
 
@@ -215,31 +151,21 @@ export default function Home() {
               <div className="w-[180px] h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto" />
             </div>
 
-            {/* CARDS */}
-
             <div className="grid lg:grid-cols-2 gap-10">
 
               {/* WHITE CARD */}
 
               <div className="relative group overflow-hidden rounded-[50px] bg-white border border-white/60 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.12)] p-10 transition-all duration-500 hover:scale-[1.02]">
 
-                {/* BACK GLOW */}
-
                 <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-white rounded-full blur-[100px] opacity-80" />
 
                 <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-blue-200/40 rounded-full blur-[120px]" />
 
-                {/* REFLECTION */}
-
                 <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/40 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                {/* NUMBER */}
 
                 <div className="relative z-10 text-[#04113A]/20 text-8xl font-black mb-6">
                   01
                 </div>
-
-                {/* IMAGE */}
 
                 <div className="relative z-10 flex justify-center mb-10">
 
@@ -252,43 +178,15 @@ export default function Home() {
                   />
                 </div>
 
-                {/* CONTENT */}
-
                 <div className="relative z-10">
 
                   <h3 className="text-4xl font-black text-[#04113A] mb-4">
                     WHITE WALLET
                   </h3>
 
-                  <p className="text-[#04113A]/70 text-lg leading-relaxed mb-8">
+                  <p className="text-[#04113A]/70 text-lg leading-relaxed">
                     Luxury minimal edition created for premium members with private access and elite identity.
                   </p>
-
-                  {/* FEATURES */}
-
-                  <div className="space-y-4">
-
-                    <div className="flex items-center gap-3 text-[#04113A]">
-
-                      <div className="w-2 h-2 rounded-full bg-blue-500" />
-
-                      Premium Material
-                    </div>
-
-                    <div className="flex items-center gap-3 text-[#04113A]">
-
-                      <div className="w-2 h-2 rounded-full bg-blue-500" />
-
-                      Exclusive Access
-                    </div>
-
-                    <div className="flex items-center gap-3 text-[#04113A]">
-
-                      <div className="w-2 h-2 rounded-full bg-blue-500" />
-
-                      Private Community
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -296,23 +194,15 @@ export default function Home() {
 
               <div className="relative group overflow-hidden rounded-[50px] bg-[#07154A] border border-white/10 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.35)] p-10 transition-all duration-500 hover:scale-[1.02]">
 
-                {/* BACK GLOW */}
-
                 <div className="absolute top-[-100px] right-[-100px] w-[320px] h-[320px] bg-blue-500/30 rounded-full blur-[120px]" />
 
                 <div className="absolute bottom-[-120px] left-[-120px] w-[260px] h-[260px] bg-cyan-400/20 rounded-full blur-[120px]" />
 
-                {/* REFLECTION */}
-
                 <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                {/* NUMBER */}
 
                 <div className="relative z-10 text-white/10 text-8xl font-black mb-6">
                   02
                 </div>
-
-                {/* IMAGE */}
 
                 <div className="relative z-10 flex justify-center mb-10">
 
@@ -325,80 +215,144 @@ export default function Home() {
                   />
                 </div>
 
-                {/* CONTENT */}
-
                 <div className="relative z-10">
 
                   <h3 className="text-4xl font-black text-white mb-4">
                     BLUE WALLET
                   </h3>
 
-                  <p className="text-white/70 text-lg leading-relaxed mb-8">
+                  <p className="text-white/70 text-lg leading-relaxed">
                     Signature edition with deep premium aesthetics and exclusive community privileges.
                   </p>
-
-                  {/* FEATURES */}
-
-                  <div className="space-y-4">
-
-                    <div className="flex items-center gap-3 text-white">
-
-                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
-
-                      Signature Design
-                    </div>
-
-                    <div className="flex items-center gap-3 text-white">
-
-                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
-
-                      Elite Status
-                    </div>
-
-                    <div className="flex items-center gap-3 text-white">
-
-                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
-
-                      Premium Identity
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SOON */}
+        {/* APPLICATIONS */}
 
         <section
           id="soon"
-          className="px-6 md:px-20 py-28 relative z-10"
+          className="px-6 md:px-20 py-32 relative z-10 overflow-hidden"
         >
 
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#020817] via-[#06143d] to-[#020817]" />
 
-            <p className="uppercase tracking-[0.4em] text-white/50 mb-4">
-              Exclusive Access
-            </p>
+          <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[140px]" />
 
-            <h2 className="text-5xl md:text-7xl font-black mb-6">
-              SOON
-            </h2>
+          <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-[140px]" />
 
-            <p className="text-white/70 text-xl mb-12">
-              Summer 2026 Countdown
-            </p>
+          <div className="relative z-10 max-w-6xl mx-auto">
 
-            <Countdown />
+            <div className="text-center mb-16">
+
+              <p className="uppercase tracking-[0.45em] text-white/40 mb-5">
+                Private Access
+              </p>
+
+              <h2 className="text-5xl md:text-8xl font-black leading-[0.9] mb-6">
+                Applications
+                <br />
+                Open In
+              </h2>
+
+              <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto">
+                Limited access for selected members only.
+                Waitlist applications are currently unavailable.
+              </p>
+            </div>
+
+            {/* COUNTDOWN */}
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto mb-16">
+
+              {[
+                ['Days', 30],
+                ['Hours', 0],
+                ['Minutes', 0],
+                ['Seconds', 0],
+              ].map(([label, value]) => (
+                <div
+                  key={String(label)}
+                  className="relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[36px] py-10 shadow-[0_30px_80px_rgba(0,0,0,0.45)]"
+                >
+
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent" />
+
+                  <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px]" />
+
+                  <div className="relative z-10">
+
+                    <div className="text-5xl md:text-7xl font-black tracking-tight">
+                      {value as number}
+                    </div>
+
+                    <div className="text-white/40 uppercase tracking-[0.3em] text-xs md:text-sm mt-4">
+                      {label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* BUTTON */}
+
+            <div className="flex justify-center">
+
+              <div className="relative group">
+
+                <div className="absolute inset-0 bg-white/10 blur-[60px] rounded-[34px] opacity-70" />
+
+                <button
+                  disabled
+                  className="relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[34px] px-12 py-6 text-white/45 font-black tracking-[0.18em] cursor-not-allowed shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
+                >
+
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+
+                  <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px]" />
+
+                  <div className="relative z-10 flex items-center gap-4">
+
+                    <span>
+                      JOIN WAITLIST
+                    </span>
+
+                    <span className="text-[10px] md:text-xs px-4 py-2 rounded-full bg-white/10 border border-white/10 tracking-[0.28em] text-white/35">
+                      LOCKED
+                    </span>
+                  </div>
+                </button>
+
+                <div className="text-center text-white/25 text-sm tracking-[0.18em] mt-5 uppercase">
+                  Applications are not available yet
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
 
       <style jsx global>{`
+        * {
+          box-sizing: border-box;
+        }
+
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+          background: #020817;
+          color: white;
+          scroll-behavior: smooth;
+        }
+
         .main-bg {
           position: relative;
           min-height: 100vh;
-          overflow: hidden;
+          overflow-x: hidden;
           background: #020817;
           color: white;
         }
@@ -594,6 +548,18 @@ export default function Home() {
           100% {
             transform: translateY(0px);
             opacity: 0.3;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .wave {
+            filter: blur(100px);
+          }
+
+          .wave1,
+          .wave2 {
+            width: 500px;
+            height: 500px;
           }
         }
       `}</style>
