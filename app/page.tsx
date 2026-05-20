@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Send, Mail } from 'lucide-react';
 
 function Countdown() {
   const calculateTimeLeft = () => {
@@ -124,12 +125,14 @@ export default function Home() {
 
               <button
                 onClick={() => {
-                  document
-                    .getElementById('soon')
-                    ?.scrollIntoView({
+                  const section = document.getElementById('soon');
+
+                  if (section) {
+                    window.scrollTo({
+                      top: section.offsetTop - 20,
                       behavior: 'smooth',
-                      block: 'start',
                     });
+                  }
                 }}
                 className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300 shadow-[0_20px_60px_rgba(255,255,255,0.12)]"
               >
@@ -182,11 +185,6 @@ export default function Home() {
                   className="relative z-10 w-[240px] md:w-[380px] rotate-[14deg] drop-shadow-[0_50px_140px_rgba(37,99,235,0.45)] transition-all duration-500 group-hover:scale-105"
                 />
               </div>
-
-              <div className="particle p1"></div>
-              <div className="particle p2"></div>
-              <div className="particle p3"></div>
-              <div className="particle p4"></div>
             </div>
           </div>
         </section>
@@ -299,7 +297,7 @@ export default function Home() {
 
         <section
           id="soon"
-          className="px-6 md:px-20 py-20 relative z-10 scroll-mt-24"
+          className="px-6 md:px-20 py-24 relative z-10"
         >
 
           <div className="max-w-5xl mx-auto text-center">
@@ -317,19 +315,79 @@ export default function Home() {
             </p>
 
             <Countdown />
+
+            {/* PHRASE */}
+
+            <div className="mt-20">
+
+              <p className="text-3xl md:text-5xl font-black leading-tight">
+                Именно ты
+                <br />
+                достоин этого
+              </p>
+            </div>
           </div>
         </section>
+
+        {/* FOOTER */}
+
+        <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70 relative z-10">
+
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+
+            <div>
+
+              <div className="text-white font-black text-2xl mb-2">
+                T.M.D COMMUNITY
+              </div>
+
+              <div className="text-white/60">
+                Premium CartHolder Access
+              </div>
+            </div>
+
+            <div>
+
+              <div className="font-semibold text-white mb-4">
+                Support
+              </div>
+
+              <div className="flex flex-col gap-4">
+
+                <a
+                  href="https://t.me/managerTMD_p2p"
+                  className="flex items-center gap-3 hover:text-white transition"
+                >
+                  <Send size={16} />
+                  @managerTMD_p2p
+                </a>
+
+                <a
+                  href="mailto:tmdsupport1@gmail.com"
+                  className="flex items-center gap-3 hover:text-white transition"
+                >
+                  <Mail size={16} />
+                  tmdsupport1@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
 
       <style jsx global>{`
         html {
-          scroll-behavior: smooth;
+          scroll-behavior: auto;
+        }
+
+        body {
+          overflow-x: hidden;
         }
 
         .main-bg {
           position: relative;
           min-height: 100vh;
-          overflow: hidden;
+          overflow-x: hidden;
           background: #020817;
           color: white;
         }
@@ -380,46 +438,6 @@ export default function Home() {
           animation: float4 20s ease-in-out infinite;
         }
 
-        .particle {
-          position: absolute;
-          border-radius: 999px;
-          background: white;
-          filter: blur(3px);
-          opacity: 0.8;
-        }
-
-        .p1 {
-          width: 8px;
-          height: 8px;
-          top: 20%;
-          left: 45%;
-          animation: particle1 5s infinite ease-in-out;
-        }
-
-        .p2 {
-          width: 12px;
-          height: 12px;
-          top: 60%;
-          left: 55%;
-          animation: particle2 6s infinite ease-in-out;
-        }
-
-        .p3 {
-          width: 6px;
-          height: 6px;
-          top: 35%;
-          right: 25%;
-          animation: particle3 7s infinite ease-in-out;
-        }
-
-        .p4 {
-          width: 10px;
-          height: 10px;
-          bottom: 20%;
-          left: 35%;
-          animation: particle4 8s infinite ease-in-out;
-        }
-
         @keyframes float1 {
           0% {
             transform: translate(0, 0) scale(1);
@@ -465,66 +483,6 @@ export default function Home() {
           }
           100% {
             transform: translate(0, 0) scale(1);
-          }
-        }
-
-        @keyframes particle1 {
-          0% {
-            transform: translateY(0px);
-            opacity: 0.3;
-          }
-          50% {
-            transform: translateY(-20px);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(0px);
-            opacity: 0.3;
-          }
-        }
-
-        @keyframes particle2 {
-          0% {
-            transform: translateY(0px);
-            opacity: 0.4;
-          }
-          50% {
-            transform: translateY(-25px);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(0px);
-            opacity: 0.4;
-          }
-        }
-
-        @keyframes particle3 {
-          0% {
-            transform: translateY(0px);
-            opacity: 0.5;
-          }
-          50% {
-            transform: translateY(-18px);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(0px);
-            opacity: 0.5;
-          }
-        }
-
-        @keyframes particle4 {
-          0% {
-            transform: translateY(0px);
-            opacity: 0.3;
-          }
-          50% {
-            transform: translateY(-22px);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(0px);
-            opacity: 0.3;
           }
         }
       `}</style>
