@@ -355,11 +355,11 @@ export default function Home() {
               <div className="flex flex-col gap-4">
 
                 <a
-                  href="https://t.me/managerTMD_p2p"
+                  href="https://t.me/TMDsupport"
                   className="flex items-center gap-3 hover:text-white transition"
                 >
                   <Send size={16} />
-                  @managerTMD_p2p
+                  "@TMDsupport"
                 </a>
 
                 <a
