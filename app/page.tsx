@@ -45,7 +45,7 @@ function Countdown() {
       ].map(([label, value]) => (
         <div
           key={String(label)}
-          className="bg-white/[0.05] border border-white/10 backdrop-blur-[20px] rounded-[32px] py-10"
+          className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[32px] py-10"
         >
           <div className="text-5xl md:text-6xl font-black">
             {value as number}
@@ -62,285 +62,249 @@ function Countdown() {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#030816] text-white">
+    <>
+      <div className="main-bg">
 
-      {/* LIQUID WAVES */}
+        {/* WAVES */}
 
-      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="wave wave1"></div>
+        <div className="wave wave2"></div>
+        <div className="wave wave3"></div>
 
-        {/* wave 1 */}
-        <div
-          className="absolute w-[120vw] h-[120vw] opacity-40"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(37,99,235,0.45) 0%, rgba(37,99,235,0) 70%)',
-            top: '-35%',
-            left: '-20%',
-            filter: 'blur(90px)',
-            animation: 'wave1 18s ease-in-out infinite',
-          }}
-        />
+        {/* HERO */}
 
-        {/* wave 2 */}
-        <div
-          className="absolute w-[120vw] h-[120vw] opacity-30"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(59,130,246,0.35) 0%, rgba(59,130,246,0) 70%)',
-            bottom: '-45%',
-            right: '-20%',
-            filter: 'blur(110px)',
-            animation: 'wave2 22s ease-in-out infinite',
-          }}
-        />
+        <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
 
-        {/* wave 3 */}
-        <div
-          className="absolute w-[100vw] h-[100vw] opacity-20"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(96,165,250,0.30) 0%, rgba(96,165,250,0) 70%)',
-            top: '10%',
-            left: '30%',
-            filter: 'blur(120px)',
-            animation: 'wave3 25s ease-in-out infinite',
-          }}
-        />
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
 
-        {/* overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_40%)]" />
-      </div>
+            {/* LEFT */}
 
-      {/* HERO */}
+            <div>
 
-      <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20">
+              <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8">
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
+                <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
 
-          {/* LEFT */}
-
-          <div>
-
-            <div className="inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 backdrop-blur-[20px] rounded-full px-5 py-3 mb-8">
-
-              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-
-              <span className="uppercase tracking-[0.35em] text-xs text-white/70">
-                Exclusive Private Community
-              </span>
-            </div>
-
-            {/* LOGO */}
-
-            <div className="mb-10">
-
-              <div className="relative w-[120px] h-[120px] rounded-[36px] bg-white/[0.05] border border-white/10 backdrop-blur-[25px] flex items-center justify-center overflow-hidden">
-
-                <div className="absolute w-[200px] h-[200px] bg-blue-500/20 blur-[70px]" />
-
-                <span className="text-4xl font-black tracking-[0.08em] z-10">
-                  TMD
+                <span className="uppercase tracking-[0.35em] text-xs text-white/70">
+                  Exclusive Private Community
                 </span>
               </div>
+
+              {/* LOGO */}
+
+              <div className="mb-10">
+
+                <div className="relative w-[120px] h-[120px] rounded-[36px] bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center overflow-hidden">
+
+                  <div className="absolute w-[180px] h-[180px] bg-blue-500/20 blur-[60px]" />
+
+                  <span className="text-4xl font-black tracking-[0.1em] z-10">
+                    TMD
+                  </span>
+                </div>
+              </div>
+
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-6">
+                T.M.D <br />
+                COMMUNITY
+              </h1>
+
+              <h2 className="text-2xl md:text-4xl text-white/80 mb-6 leading-tight">
+                Картхолдер который будет
+                <br />
+                вас выделять
+              </h2>
+
+              <p className="text-white/60 text-lg max-w-xl mb-10">
+                Premium CartHolders • Private Community • Luxury Access
+              </p>
+
+              <a
+                href="#soon"
+                className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300"
+              >
+                SOON
+              </a>
             </div>
 
-            <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-6">
-              T.M.D <br />
-              COMMUNITY
-            </h1>
+            {/* RIGHT */}
 
-            <h2 className="text-2xl md:text-4xl text-white/80 mb-6 leading-tight">
-              Картхолдер который будет
-              <br />
-              вас выделять
-            </h2>
+            <div className="relative flex items-center justify-center min-h-[650px]">
 
-            <p className="text-white/60 text-lg max-w-xl mb-10">
-              Premium CartHolders • Private Community • Luxury Access
-            </p>
+              <div className="absolute w-[620px] h-[460px] rounded-[60px] bg-white/5 border border-white/10 backdrop-blur-2xl" />
 
-            <a
-              href="#soon"
-              className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300"
-            >
-              SOON
-            </a>
+              {/* WHITE */}
+
+              <div className="absolute left-[5%] md:left-[10%] top-[18%]">
+
+                <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-125" />
+
+                <img
+                  src="/photo2131.png"
+                  alt="White Wallet"
+                  className="relative z-10 w-[220px] md:w-[330px] rotate-[-12deg]"
+                />
+              </div>
+
+              {/* BLUE */}
+
+              <div className="absolute right-[5%] md:right-[10%] bottom-[12%]">
+
+                <div className="absolute inset-0 bg-blue-500/30 blur-[120px] rounded-full scale-125" />
+
+                <img
+                  src="/photo2121.png"
+                  alt="Blue Wallet"
+                  className="relative z-10 w-[220px] md:w-[330px] rotate-[12deg]"
+                />
+              </div>
+            </div>
           </div>
+        </section>
 
-          {/* RIGHT */}
+        {/* PREMIUM */}
 
-          <div className="relative flex items-center justify-center min-h-[650px]">
+        <section className="bg-white text-[#04113A] rounded-t-[60px] px-6 md:px-20 py-28 relative z-10">
 
-            {/* GLASS */}
+          <h2 className="text-5xl font-black text-center mb-14">
+            PREMIUM LINE
+          </h2>
 
-            <div className="absolute w-[620px] h-[460px] rounded-[60px] bg-white/[0.04] border border-white/10 backdrop-blur-[35px]" />
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-            {/* WHITE WALLET */}
-
-            <div className="absolute left-[5%] md:left-[10%] top-[18%]">
-
-              <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-125" />
+            <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
 
               <img
                 src="/photo2131.png"
-                alt="White Wallet"
-                className="relative z-10 w-[220px] md:w-[330px] rotate-[-12deg]"
+                className="rounded-[24px] mb-8 w-full"
               />
+
+              <h3 className="text-4xl font-black">
+                WHITE WALLET
+              </h3>
             </div>
 
-            {/* BLUE WALLET */}
-
-            <div className="absolute right-[5%] md:right-[10%] bottom-[12%]">
-
-              <div className="absolute inset-0 bg-blue-500/30 blur-[120px] rounded-full scale-125" />
+            <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
 
               <img
                 src="/photo2121.png"
-                alt="Blue Wallet"
-                className="relative z-10 w-[220px] md:w-[330px] rotate-[12deg]"
+                className="rounded-[24px] mb-8 w-full"
               />
+
+              <h3 className="text-4xl font-black">
+                BLUE WALLET
+              </h3>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* PREMIUM LINE */}
+        {/* SOON */}
 
-      <section className="bg-white text-[#04113A] rounded-t-[60px] px-6 md:px-20 py-28 relative z-10">
+        <section id="soon" className="px-6 md:px-20 py-28 relative z-10">
 
-        <h2 className="text-5xl font-black text-center mb-14">
-          PREMIUM LINE
-        </h2>
+          <div className="max-w-5xl mx-auto text-center">
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
-          <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
-
-            <img
-              src="/photo2131.png"
-              className="rounded-[24px] mb-8 w-full"
-            />
-
-            <h3 className="text-4xl font-black">
-              WHITE WALLET
-            </h3>
-          </div>
-
-          <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
-
-            <img
-              src="/photo2121.png"
-              className="rounded-[24px] mb-8 w-full"
-            />
-
-            <h3 className="text-4xl font-black">
-              BLUE WALLET
-            </h3>
-          </div>
-        </div>
-      </section>
-
-      {/* SOON */}
-
-      <section
-        id="soon"
-        className="px-6 md:px-20 py-28 relative"
-      >
-
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-
-          <p className="uppercase tracking-[0.4em] text-white/50 mb-4">
-            Exclusive Access
-          </p>
-
-          <h2 className="text-5xl md:text-7xl font-black mb-6">
-            SOON
-          </h2>
-
-          <p className="text-white/70 text-xl mb-12">
-            Summer 2026 Countdown
-          </p>
-
-          <Countdown />
-        </div>
-      </section>
-
-      {/* FOOTER */}
-
-      <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70">
-
-        <div className="max-w-7xl mx-auto flex justify-between flex-col md:flex-row gap-8">
-
-          <div>
-
-            <div className="font-black text-2xl text-white">
-              T.M.D COMMUNITY
-            </div>
-
-            <p className="text-sm mt-1">
-              Exclusive P2P CartHolders
+            <p className="uppercase tracking-[0.4em] text-white/50 mb-4">
+              Exclusive Access
             </p>
-          </div>
 
-          <div>
+            <h2 className="text-5xl md:text-7xl font-black mb-6">
+              SOON
+            </h2>
 
-            <div className="font-semibold text-white mb-2">
-              Support
-            </div>
-
-            <a
-              href="https://t.me/managerTMD_p2p"
-              className="block hover:text-white"
-            >
-              Telegram Support
-            </a>
-
-            <p>
-              tmdsupport1@gmail.com
+            <p className="text-white/70 text-xl mb-12">
+              Summer 2026 Countdown
             </p>
-          </div>
-        </div>
-      </footer>
 
-      {/* ANIMATIONS */}
+            <Countdown />
+          </div>
+        </section>
+
+      </div>
 
       <style jsx global>{`
-        @keyframes wave1 {
+        .main-bg {
+          position: relative;
+          min-height: 100vh;
+          overflow: hidden;
+          background: #030816;
+          color: white;
+        }
+
+        .wave {
+          position: absolute;
+          border-radius: 9999px;
+          filter: blur(120px);
+          opacity: 0.7;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+          mix-blend-mode: screen;
+        }
+
+        .wave1 {
+          width: 900px;
+          height: 900px;
+          background: #2563eb;
+          top: -250px;
+          left: -150px;
+          animation: float1 16s infinite;
+        }
+
+        .wave2 {
+          width: 1000px;
+          height: 1000px;
+          background: #38bdf8;
+          bottom: -350px;
+          right: -250px;
+          animation: float2 20s infinite;
+        }
+
+        .wave3 {
+          width: 700px;
+          height: 700px;
+          background: #60a5fa;
+          top: 20%;
+          left: 30%;
+          opacity: 0.4;
+          animation: float3 18s infinite;
+        }
+
+        @keyframes float1 {
           0% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0, 0) scale(1);
           }
           50% {
-            transform: translate(80px, 40px) scale(1.15);
+            transform: translate(120px, 60px) scale(1.15);
           }
           100% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0, 0) scale(1);
           }
         }
 
-        @keyframes wave2 {
+        @keyframes float2 {
           0% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0, 0) scale(1);
           }
           50% {
-            transform: translate(-100px, -60px) scale(1.2);
+            transform: translate(-140px, -80px) scale(1.2);
           }
           100% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0, 0) scale(1);
           }
         }
 
-        @keyframes wave3 {
+        @keyframes float3 {
           0% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0, 0) scale(1);
           }
           50% {
-            transform: translate(50px, -40px) scale(1.1);
+            transform: translate(70px, -60px) scale(1.1);
           }
           100% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0, 0) scale(1);
           }
         }
       `}</style>
-    </div>
+    </>
   );
 }
