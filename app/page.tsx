@@ -1,4 +1,13 @@
 'use client';
+<div className="fixed inset-0 overflow-hidden -z-10">
+
+  <div className="absolute top-[-200px] left-[-100px] w-[700px] h-[700px] bg-blue-500/30 rounded-full blur-[160px] animate-pulse" />
+
+  <div className="absolute bottom-[-250px] right-[-150px] w-[800px] h-[800px] bg-cyan-400/20 rounded-full blur-[180px] animate-pulse" />
+
+  <div className="absolute top-[20%] left-[35%] w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[140px] animate-pulse" />
+
+</div>
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
