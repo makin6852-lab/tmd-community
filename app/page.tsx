@@ -36,21 +36,19 @@ function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
-  const items = [
-    ['Days', timeLeft.days],
-    ['Hours', timeLeft.hours],
-    ['Minutes', timeLeft.minutes],
-    ['Seconds', timeLeft.seconds],
-  ];
-
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
-      {items.map(([label, value]) => (
+      {[
+        ['Days', timeLeft.days],
+        ['Hours', timeLeft.hours],
+        ['Minutes', timeLeft.minutes],
+        ['Seconds', timeLeft.seconds],
+      ].map(([label, value]) => (
         <div
           key={String(label)}
-          className="bg-white/[0.06] backdrop-blur-[30px] border border-white/10 rounded-[36px] py-10 shadow-[0_25px_50px_rgba(0,0,0,0.25)]"
+          className="bg-white/[0.05] backdrop-blur-[25px] border border-white/10 rounded-[34px] py-10"
         >
-          <div className="text-5xl md:text-6xl font-black text-white">
+          <div className="text-5xl md:text-6xl font-black">
             {value as number}
           </div>
 
@@ -65,29 +63,70 @@ function Countdown() {
 
 export default function Home() {
   return (
-    <div className="bg-[#04113A] text-white min-h-screen overflow-x-hidden">
+    <div className="bg-[#04113A] text-white min-h-screen overflow-hidden relative">
 
-      {/* PREMIUM BACKGROUND */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-250px] left-[-150px] w-[700px] h-[700px] bg-blue-500/20 blur-[180px] rounded-full" />
-        <div className="absolute bottom-[-200px] right-[-100px] w-[600px] h-[600px] bg-white/10 blur-[180px] rounded-full" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_35%)]" />
+      {/* YANDEX MUSIC STYLE WAVES */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-[-150px] left-[-100px] w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[140px]"
+        />
+
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+            x: [0, -60, 0],
+            y: [0, 40, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute bottom-[-180px] right-[-120px] w-[700px] h-[700px] bg-cyan-400/10 rounded-full blur-[170px]"
+        />
+
+        <motion.div
+          animate={{
+            scale: [1, 1.25, 1],
+            opacity: [0.4, 0.7, 0.4],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-[25%] left-[35%] w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[130px]"
+        />
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_35%)]" />
       </div>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20">
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
 
-          {/* LEFT SIDE */}
+          {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
 
-            {/* PREMIUM BADGE */}
-            <div className="inline-flex items-center gap-3 bg-white/[0.06] backdrop-blur-[30px] border border-white/10 rounded-full px-5 py-3 mb-8 shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
+            {/* BADGE */}
+            <div className="inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 backdrop-blur-[25px] rounded-full px-5 py-3 mb-8">
+
               <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
 
               <span className="uppercase tracking-[0.35em] text-xs text-white/70">
@@ -95,11 +134,21 @@ export default function Home() {
               </span>
             </div>
 
-            {/* PREMIUM LOGO */}
+            {/* LOGO */}
             <div className="mb-10">
-              <div className="relative w-[120px] h-[120px] rounded-[36px] bg-white/[0.05] backdrop-blur-[30px] border border-white/10 flex items-center justify-center overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+              <div className="relative w-[120px] h-[120px] rounded-[36px] bg-white/[0.05] border border-white/10 backdrop-blur-[30px] flex items-center justify-center shadow-[0_25px_60px_rgba(0,0,0,0.35)] overflow-hidden">
 
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+                <motion.div
+                  animate={{
+                    opacity: [0.2, 0.5, 0.2],
+                    scale: [1, 1.15, 1],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                  }}
+                  className="absolute w-[160px] h-[160px] bg-blue-400/20 blur-[60px]"
+                />
 
                 <span className="text-4xl font-black tracking-[0.08em] z-10">
                   TMD
@@ -124,50 +173,67 @@ export default function Home() {
 
             <a
               href="#soon"
-              className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center gap-2 hover:scale-105 transition-all duration-300 shadow-[0_20px_50px_rgba(255,255,255,0.12)]"
+              className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300"
             >
               SOON
             </a>
           </motion.div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT */}
           <div className="relative flex items-center justify-center min-h-[650px]">
 
-            {/* GLOW */}
-            <div className="absolute w-[650px] h-[650px] bg-blue-500/10 blur-[140px] rounded-full" />
+            {/* glass background */}
+            <div className="absolute w-[580px] h-[420px] rounded-[55px] bg-white/[0.04] border border-white/10 backdrop-blur-[35px]" />
 
-            {/* GLASS CONTAINER */}
-            <div className="absolute w-[580px] h-[420px] rounded-[55px] border border-white/10 bg-white/[0.04] backdrop-blur-[40px] shadow-[0_40px_100px_rgba(0,0,0,0.35)]" />
-
-            {/* WHITE WALLET */}
+            {/* white wallet */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{
+                opacity: 1,
+                y: [0, -10, 0],
+              }}
+              transition={{
+                opacity: { duration: 1 },
+                y: {
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                },
+              }}
               className="absolute left-[5%] md:left-[10%] top-[18%]"
             >
-              <div className="absolute inset-0 bg-gray-300/20 blur-[90px] rounded-full scale-125" />
+              <div className="absolute inset-0 bg-white/20 blur-[90px] rounded-full scale-125" />
 
               <img
                 src="/photo2131.png"
                 alt="White Wallet"
-                className="relative z-10 w-[220px] md:w-[320px] rotate-[-12deg] drop-shadow-[0_35px_80px_rgba(255,255,255,0.15)]"
+                className="relative z-10 w-[220px] md:w-[320px] rotate-[-12deg] drop-shadow-[0_35px_80px_rgba(255,255,255,0.18)]"
               />
             </motion.div>
 
-            {/* BLUE WALLET */}
+            {/* blue wallet */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{
+                opacity: 1,
+                y: [0, 10, 0],
+              }}
+              transition={{
+                opacity: { duration: 1.2 },
+                y: {
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                },
+              }}
               className="absolute right-[5%] md:right-[10%] bottom-[12%]"
             >
-              <div className="absolute inset-0 bg-blue-500/25 blur-[90px] rounded-full scale-125" />
+              <div className="absolute inset-0 bg-blue-500/25 blur-[100px] rounded-full scale-125" />
 
               <img
                 src="/photo2121.png"
                 alt="Blue Wallet"
-                className="relative z-10 w-[220px] md:w-[320px] rotate-[12deg] drop-shadow-[0_35px_80px_rgba(37,99,235,0.25)]"
+                className="relative z-10 w-[220px] md:w-[320px] rotate-[12deg] drop-shadow-[0_35px_80px_rgba(37,99,235,0.30)]"
               />
             </motion.div>
           </div>
@@ -176,6 +242,7 @@ export default function Home() {
 
       {/* PREMIUM LINE */}
       <section className="bg-white text-[#04113A] rounded-t-[60px] px-6 md:px-20 py-28 relative z-10">
+
         <h2 className="text-5xl font-black text-center mb-14">
           PREMIUM LINE
         </h2>
@@ -185,19 +252,6 @@ export default function Home() {
           <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
             <img
               src="/photo2131.png"
-              alt="BLUE Wallet"
-              className="rounded-[24px] mb-8 w-full"
-            />
-
-            <h3 className="text-4xl font-black">
-              BLUE WALLET
-            </h3>
-          </div>
-
-          <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
-            <img
-              src="/photo2121.png"
-              alt="WHITE Wallet"
               className="rounded-[24px] mb-8 w-full"
             />
 
@@ -206,11 +260,23 @@ export default function Home() {
             </h3>
           </div>
 
+          <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
+            <img
+              src="/photo2121.png"
+              className="rounded-[24px] mb-8 w-full"
+            />
+
+            <h3 className="text-4xl font-black">
+              BLUE WALLET
+            </h3>
+          </div>
+
         </div>
       </section>
 
       {/* SOON */}
       <section id="soon" className="px-6 md:px-20 py-28">
+
         <div className="max-w-5xl mx-auto text-center">
 
           <p className="uppercase tracking-[0.4em] text-white/50 mb-4">
@@ -231,6 +297,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70">
+
         <div className="max-w-7xl mx-auto flex justify-between flex-col md:flex-row gap-8">
 
           <div>
@@ -255,7 +322,9 @@ export default function Home() {
               Telegram Support
             </a>
 
-            <p>tmdsupport1@gmail.com</p>
+            <p>
+              tmdsupport1@gmail.com
+            </p>
           </div>
         </div>
       </footer>
