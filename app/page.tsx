@@ -359,7 +359,7 @@ export default function Home() {
                   className="flex items-center gap-3 hover:text-white transition"
                 >
                   <Send size={16} />
-                  "@TMDsupport"
+                  TMDsupport
                 </a>
 
                 <a
