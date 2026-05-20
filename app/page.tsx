@@ -337,122 +337,145 @@ export default function Home() {
       </div>
 
       <style jsx global>{`
-        * {
-          box-sizing: border-box;
-        }
+  * {
+    box-sizing: border-box;
+  }
 
-        html,
-        body {
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-          background: #020817;
-          scroll-behavior: smooth;
-        }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #020817;
+    scroll-behavior: smooth;
+  }
 
-        .main-bg {
-          position: relative;
-          width: 100%;
-          min-height: 100vh;
-          overflow-x: hidden;
-          overflow-y: visible;
-          background: #020817;
-          color: white;
-        }
+  body {
+    min-height: 100vh;
+  }
 
-        .wave {
-          position: absolute;
-          border-radius: 9999px;
-          filter: blur(120px);
-          opacity: 0.35;
-          pointer-events: none;
-        }
+  .main-bg {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background: #020817;
+    color: white;
+  }
 
-        .wave1 {
-          width: 600px;
-          height: 600px;
-          background: #2563eb;
-          top: -150px;
-          left: -150px;
-          animation: wave1 14s ease-in-out infinite;
-        }
+  .wave {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(140px);
+    opacity: 0.65;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 0;
+  }
 
-        .wave2 {
-          width: 700px;
-          height: 700px;
-          background: #38bdf8;
-          bottom: -250px;
-          right: -200px;
-          animation: wave2 18s ease-in-out infinite;
-        }
+  .wave1 {
+    width: 900px;
+    height: 900px;
+    background: #2563eb;
+    top: -250px;
+    left: -150px;
+    animation: float1 16s ease-in-out infinite;
+  }
 
-        .wave3 {
-          width: 500px;
-          height: 500px;
-          background: #60a5fa;
-          top: 30%;
-          left: 30%;
-          opacity: 0.15;
-          animation: wave3 20s ease-in-out infinite;
-        }
+  .wave2 {
+    width: 1100px;
+    height: 1100px;
+    background: #38bdf8;
+    bottom: -400px;
+    right: -250px;
+    animation: float2 22s ease-in-out infinite;
+  }
 
-        @keyframes wave1 {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          50% {
-            transform: translate(80px, 40px) scale(1.08);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
+  .wave3 {
+    width: 700px;
+    height: 700px;
+    background: #60a5fa;
+    top: 15%;
+    left: 35%;
+    opacity: 0.35;
+    animation: float3 18s ease-in-out infinite;
+  }
 
-        @keyframes wave2 {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          50% {
-            transform: translate(-100px, -60px) scale(1.1);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
+  @keyframes float1 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
 
-        @keyframes wave3 {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          50% {
-            transform: translate(50px, -40px) scale(1.06);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
+    50% {
+      transform: translate(140px, 60px) scale(1.15);
+    }
 
-        @media (max-width: 768px) {
-          .wave {
-            filter: blur(90px);
-          }
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
 
-          .wave1 {
-            width: 350px;
-            height: 350px;
-          }
+  @keyframes float2 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
 
-          .wave2 {
-            width: 420px;
-            height: 420px;
-          }
+    50% {
+      transform: translate(-160px, -90px) scale(1.2);
+    }
 
-          .wave3 {
-            width: 300px;
-            height: 300px;
-          }
-        }
-      `}</style>
-    </>
-  );
-}
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  @keyframes float3 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate(80px, -70px) scale(1.1);
+    }
+
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    .main-bg {
+      overflow-x: hidden;
+    }
+
+    .wave {
+      filter: blur(100px);
+      opacity: 0.45;
+    }
+
+    .wave1 {
+      width: 500px;
+      height: 500px;
+      top: -120px;
+      left: -120px;
+    }
+
+    .wave2 {
+      width: 650px;
+      height: 650px;
+      right: -250px;
+      bottom: -250px;
+    }
+
+    .wave3 {
+      width: 400px;
+      height: 400px;
+    }
+  }
+`}</style>
