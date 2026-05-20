@@ -122,12 +122,19 @@ export default function Home() {
                 Premium CartHolders • Private Community • Luxury Access
               </p>
 
-              <a
-                href="#soon"
+              <button
+                onClick={() => {
+                  document
+                    .getElementById('soon')
+                    ?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                    });
+                }}
                 className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300 shadow-[0_20px_60px_rgba(255,255,255,0.12)]"
               >
                 SOON
-              </a>
+              </button>
             </div>
 
             {/* RIGHT */}
@@ -176,8 +183,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* PARTICLES */}
-
               <div className="particle p1"></div>
               <div className="particle p2"></div>
               <div className="particle p3"></div>
@@ -190,8 +195,6 @@ export default function Home() {
 
         <section className="relative px-6 md:px-20 py-32 z-10 overflow-hidden">
 
-          {/* BACKGROUND */}
-
           <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff] via-[#edf4ff] to-[#dfeeff]" />
 
           <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-[140px]" />
@@ -199,8 +202,6 @@ export default function Home() {
           <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-[140px]" />
 
           <div className="relative z-10 max-w-7xl mx-auto">
-
-            {/* TITLE */}
 
             <div className="text-center mb-20">
 
@@ -215,31 +216,21 @@ export default function Home() {
               <div className="w-[180px] h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto" />
             </div>
 
-            {/* CARDS */}
-
             <div className="grid lg:grid-cols-2 gap-10">
 
               {/* WHITE CARD */}
 
               <div className="relative group overflow-hidden rounded-[50px] bg-white border border-white/60 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.12)] p-10 transition-all duration-500 hover:scale-[1.02]">
 
-                {/* BACK GLOW */}
-
                 <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-white rounded-full blur-[100px] opacity-80" />
 
                 <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-blue-200/40 rounded-full blur-[120px]" />
 
-                {/* REFLECTION */}
-
                 <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/40 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                {/* NUMBER */}
 
                 <div className="relative z-10 text-[#04113A]/20 text-8xl font-black mb-6">
                   01
                 </div>
-
-                {/* IMAGE */}
 
                 <div className="relative z-10 flex justify-center mb-10">
 
@@ -252,8 +243,6 @@ export default function Home() {
                   />
                 </div>
 
-                {/* CONTENT */}
-
                 <div className="relative z-10">
 
                   <h3 className="text-4xl font-black text-[#04113A] mb-4">
@@ -263,32 +252,6 @@ export default function Home() {
                   <p className="text-[#04113A]/70 text-lg leading-relaxed mb-8">
                     Luxury minimal edition created for premium members with private access and elite identity.
                   </p>
-
-                  {/* FEATURES */}
-
-                  <div className="space-y-4">
-
-                    <div className="flex items-center gap-3 text-[#04113A]">
-
-                      <div className="w-2 h-2 rounded-full bg-blue-500" />
-
-                      Premium Material
-                    </div>
-
-                    <div className="flex items-center gap-3 text-[#04113A]">
-
-                      <div className="w-2 h-2 rounded-full bg-blue-500" />
-
-                      Exclusive Access
-                    </div>
-
-                    <div className="flex items-center gap-3 text-[#04113A]">
-
-                      <div className="w-2 h-2 rounded-full bg-blue-500" />
-
-                      Private Community
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -296,23 +259,15 @@ export default function Home() {
 
               <div className="relative group overflow-hidden rounded-[50px] bg-[#07154A] border border-white/10 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.35)] p-10 transition-all duration-500 hover:scale-[1.02]">
 
-                {/* BACK GLOW */}
-
                 <div className="absolute top-[-100px] right-[-100px] w-[320px] h-[320px] bg-blue-500/30 rounded-full blur-[120px]" />
 
                 <div className="absolute bottom-[-120px] left-[-120px] w-[260px] h-[260px] bg-cyan-400/20 rounded-full blur-[120px]" />
 
-                {/* REFLECTION */}
-
                 <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                {/* NUMBER */}
 
                 <div className="relative z-10 text-white/10 text-8xl font-black mb-6">
                   02
                 </div>
-
-                {/* IMAGE */}
 
                 <div className="relative z-10 flex justify-center mb-10">
 
@@ -325,8 +280,6 @@ export default function Home() {
                   />
                 </div>
 
-                {/* CONTENT */}
-
                 <div className="relative z-10">
 
                   <h3 className="text-4xl font-black text-white mb-4">
@@ -336,32 +289,6 @@ export default function Home() {
                   <p className="text-white/70 text-lg leading-relaxed mb-8">
                     Signature edition with deep premium aesthetics and exclusive community privileges.
                   </p>
-
-                  {/* FEATURES */}
-
-                  <div className="space-y-4">
-
-                    <div className="flex items-center gap-3 text-white">
-
-                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
-
-                      Signature Design
-                    </div>
-
-                    <div className="flex items-center gap-3 text-white">
-
-                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
-
-                      Elite Status
-                    </div>
-
-                    <div className="flex items-center gap-3 text-white">
-
-                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
-
-                      Premium Identity
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -372,7 +299,7 @@ export default function Home() {
 
         <section
           id="soon"
-          className="px-6 md:px-20 py-28 relative z-10"
+          className="px-6 md:px-20 py-20 relative z-10 scroll-mt-24"
         >
 
           <div className="max-w-5xl mx-auto text-center">
@@ -395,6 +322,10 @@ export default function Home() {
       </div>
 
       <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
+
         .main-bg {
           position: relative;
           min-height: 100vh;
