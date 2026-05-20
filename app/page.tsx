@@ -65,7 +65,7 @@ export default function Home() {
     <>
       <div className="main-bg">
 
-        {/* LIQUID WAVES */}
+        {/* WAVES */}
 
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
@@ -81,8 +81,6 @@ export default function Home() {
             {/* LEFT */}
 
             <div>
-
-              {/* BADGE */}
 
               <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
 
@@ -136,17 +134,11 @@ export default function Home() {
 
             <div className="relative flex items-center justify-center min-h-[720px]">
 
-              {/* MAIN GLASS */}
-
               <div className="absolute w-[680px] h-[520px] rounded-[70px] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_50px_140px_rgba(0,0,0,0.5)]" />
-
-              {/* CENTER ENERGY */}
 
               <div className="absolute w-[450px] h-[450px] bg-blue-500/20 rounded-full blur-[140px] animate-pulse" />
 
               <div className="absolute w-[300px] h-[300px] bg-cyan-400/20 rounded-full blur-[120px]" />
-
-              {/* LIGHT LINE */}
 
               <div className="absolute w-[540px] h-[2px] bg-gradient-to-r from-transparent via-blue-300/70 to-transparent blur-sm top-[46%]" />
 
@@ -154,15 +146,9 @@ export default function Home() {
 
               <div className="absolute left-[0%] md:left-[4%] top-[10%] group">
 
-                {/* ENERGY */}
-
                 <div className="absolute inset-0 bg-white/20 blur-[120px] rounded-full scale-150 opacity-80" />
 
-                {/* REFLECTION */}
-
                 <div className="absolute left-[20%] top-[5%] w-[70px] h-[240px] bg-white/30 blur-[25px] rotate-[20deg] z-20 opacity-80" />
-
-                {/* SIDE GLOW */}
 
                 <div className="absolute -left-8 top-8 w-[140px] h-[260px] bg-white/20 blur-[60px] rotate-[-20deg]" />
 
@@ -177,15 +163,9 @@ export default function Home() {
 
               <div className="absolute right-[0%] md:right-[4%] bottom-[8%] group">
 
-                {/* ENERGY */}
-
                 <div className="absolute inset-0 bg-blue-500/35 blur-[140px] rounded-full scale-150 opacity-90" />
 
-                {/* REFLECTION */}
-
                 <div className="absolute right-[18%] top-[8%] w-[70px] h-[240px] bg-cyan-200/30 blur-[25px] rotate-[18deg] z-20 opacity-80" />
-
-                {/* SIDE GLOW */}
 
                 <div className="absolute right-[-20px] bottom-0 w-[160px] h-[280px] bg-cyan-400/20 blur-[70px] rotate-[20deg]" />
 
@@ -208,38 +188,182 @@ export default function Home() {
 
         {/* PREMIUM LINE */}
 
-        <section className="bg-white text-[#04113A] rounded-t-[70px] px-6 md:px-20 py-28 relative z-10">
+        <section className="relative px-6 md:px-20 py-32 z-10 overflow-hidden">
 
-          <h2 className="text-5xl font-black text-center mb-14">
-            PREMIUM LINE
-          </h2>
+          {/* BACKGROUND */}
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff] via-[#edf4ff] to-[#dfeeff]" />
 
-            <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
+          <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-[140px]" />
 
-              <img
-                src="/photo2131.png"
-                alt="White Wallet"
-                className="rounded-[24px] mb-8 w-full"
-              />
+          <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-[140px]" />
 
-              <h3 className="text-4xl font-black">
-                WHITE WALLET
-              </h3>
+          <div className="relative z-10 max-w-7xl mx-auto">
+
+            {/* TITLE */}
+
+            <div className="text-center mb-20">
+
+              <p className="uppercase tracking-[0.4em] text-[#07154A]/50 mb-4">
+                Luxury Collection
+              </p>
+
+              <h2 className="text-5xl md:text-7xl font-black text-[#04113A] mb-6">
+                PREMIUM LINE
+              </h2>
+
+              <div className="w-[180px] h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto" />
             </div>
 
-            <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
+            {/* CARDS */}
 
-              <img
-                src="/photo2121.png"
-                alt="Blue Wallet"
-                className="rounded-[24px] mb-8 w-full"
-              />
+            <div className="grid lg:grid-cols-2 gap-10">
 
-              <h3 className="text-4xl font-black">
-                BLUE WALLET
-              </h3>
+              {/* WHITE CARD */}
+
+              <div className="relative group overflow-hidden rounded-[50px] bg-white border border-white/60 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.12)] p-10 transition-all duration-500 hover:scale-[1.02]">
+
+                {/* BACK GLOW */}
+
+                <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-white rounded-full blur-[100px] opacity-80" />
+
+                <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-blue-200/40 rounded-full blur-[120px]" />
+
+                {/* REFLECTION */}
+
+                <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/40 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
+
+                {/* NUMBER */}
+
+                <div className="relative z-10 text-[#04113A]/20 text-8xl font-black mb-6">
+                  01
+                </div>
+
+                {/* IMAGE */}
+
+                <div className="relative z-10 flex justify-center mb-10">
+
+                  <div className="absolute w-[240px] h-[240px] bg-white blur-[100px]" />
+
+                  <img
+                    src="/photo2131.png"
+                    alt="White Wallet"
+                    className="relative z-10 w-[280px] rotate-[-10deg] drop-shadow-[0_40px_100px_rgba(0,0,0,0.18)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2"
+                  />
+                </div>
+
+                {/* CONTENT */}
+
+                <div className="relative z-10">
+
+                  <h3 className="text-4xl font-black text-[#04113A] mb-4">
+                    WHITE WALLET
+                  </h3>
+
+                  <p className="text-[#04113A]/70 text-lg leading-relaxed mb-8">
+                    Luxury minimal edition created for premium members with private access and elite identity.
+                  </p>
+
+                  {/* FEATURES */}
+
+                  <div className="space-y-4">
+
+                    <div className="flex items-center gap-3 text-[#04113A]">
+
+                      <div className="w-2 h-2 rounded-full bg-blue-500" />
+
+                      Premium Material
+                    </div>
+
+                    <div className="flex items-center gap-3 text-[#04113A]">
+
+                      <div className="w-2 h-2 rounded-full bg-blue-500" />
+
+                      Exclusive Access
+                    </div>
+
+                    <div className="flex items-center gap-3 text-[#04113A]">
+
+                      <div className="w-2 h-2 rounded-full bg-blue-500" />
+
+                      Private Community
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* BLUE CARD */}
+
+              <div className="relative group overflow-hidden rounded-[50px] bg-[#07154A] border border-white/10 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.35)] p-10 transition-all duration-500 hover:scale-[1.02]">
+
+                {/* BACK GLOW */}
+
+                <div className="absolute top-[-100px] right-[-100px] w-[320px] h-[320px] bg-blue-500/30 rounded-full blur-[120px]" />
+
+                <div className="absolute bottom-[-120px] left-[-120px] w-[260px] h-[260px] bg-cyan-400/20 rounded-full blur-[120px]" />
+
+                {/* REFLECTION */}
+
+                <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
+
+                {/* NUMBER */}
+
+                <div className="relative z-10 text-white/10 text-8xl font-black mb-6">
+                  02
+                </div>
+
+                {/* IMAGE */}
+
+                <div className="relative z-10 flex justify-center mb-10">
+
+                  <div className="absolute w-[240px] h-[240px] bg-blue-500/30 blur-[120px]" />
+
+                  <img
+                    src="/photo2121.png"
+                    alt="Blue Wallet"
+                    className="relative z-10 w-[280px] rotate-[10deg] drop-shadow-[0_40px_120px_rgba(37,99,235,0.5)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2"
+                  />
+                </div>
+
+                {/* CONTENT */}
+
+                <div className="relative z-10">
+
+                  <h3 className="text-4xl font-black text-white mb-4">
+                    BLUE WALLET
+                  </h3>
+
+                  <p className="text-white/70 text-lg leading-relaxed mb-8">
+                    Signature edition with deep premium aesthetics and exclusive community privileges.
+                  </p>
+
+                  {/* FEATURES */}
+
+                  <div className="space-y-4">
+
+                    <div className="flex items-center gap-3 text-white">
+
+                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
+
+                      Signature Design
+                    </div>
+
+                    <div className="flex items-center gap-3 text-white">
+
+                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
+
+                      Elite Status
+                    </div>
+
+                    <div className="flex items-center gap-3 text-white">
+
+                      <div className="w-2 h-2 rounded-full bg-cyan-400" />
+
+                      Premium Identity
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -268,43 +392,6 @@ export default function Home() {
             <Countdown />
           </div>
         </section>
-
-        {/* FOOTER */}
-
-        <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70">
-
-          <div className="max-w-7xl mx-auto flex justify-between flex-col md:flex-row gap-8">
-
-            <div>
-
-              <div className="font-black text-2xl text-white">
-                T.M.D COMMUNITY
-              </div>
-
-              <p className="text-sm mt-1">
-                Exclusive P2P CartHolders
-              </p>
-            </div>
-
-            <div>
-
-              <div className="font-semibold text-white mb-2">
-                Support
-              </div>
-
-              <a
-                href="https://t.me/managerTMD_p2p"
-                className="block hover:text-white"
-              >
-                Telegram Support
-              </a>
-
-              <p>
-                tmdsupport1@gmail.com
-              </p>
-            </div>
-          </div>
-        </footer>
       </div>
 
       <style jsx global>{`
