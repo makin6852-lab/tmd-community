@@ -45,7 +45,7 @@ function Countdown() {
       ].map(([label, value]) => (
         <div
           key={String(label)}
-          className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[32px] py-10"
+          className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[34px] py-10 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
         >
           <div className="text-5xl md:text-6xl font-black">
             {value as number}
@@ -65,11 +65,12 @@ export default function Home() {
     <>
       <div className="main-bg">
 
-        {/* WAVES */}
+        {/* LIQUID WAVES */}
 
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
         <div className="wave wave3"></div>
+        <div className="wave wave4"></div>
 
         {/* HERO */}
 
@@ -81,7 +82,9 @@ export default function Home() {
 
             <div>
 
-              <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8">
+              {/* BADGE */}
+
+              <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
 
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
 
@@ -94,11 +97,13 @@ export default function Home() {
 
               <div className="mb-10">
 
-                <div className="relative w-[120px] h-[120px] rounded-[36px] bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center overflow-hidden">
+                <div className="relative w-[130px] h-[130px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
 
-                  <div className="absolute w-[180px] h-[180px] bg-blue-500/20 blur-[60px]" />
+                  <div className="absolute w-[220px] h-[220px] bg-blue-500/30 blur-[80px] animate-pulse" />
 
-                  <span className="text-4xl font-black tracking-[0.1em] z-10">
+                  <div className="absolute top-0 left-[-40px] w-[70px] h-[220px] bg-white/20 rotate-[20deg] blur-[20px]" />
+
+                  <span className="text-4xl font-black tracking-[0.12em] z-10">
                     TMD
                   </span>
                 </div>
@@ -121,7 +126,7 @@ export default function Home() {
 
               <a
                 href="#soon"
-                className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300"
+                className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300 shadow-[0_20px_60px_rgba(255,255,255,0.12)]"
               >
                 SOON
               </a>
@@ -129,42 +134,81 @@ export default function Home() {
 
             {/* RIGHT */}
 
-            <div className="relative flex items-center justify-center min-h-[650px]">
+            <div className="relative flex items-center justify-center min-h-[720px]">
 
-              <div className="absolute w-[620px] h-[460px] rounded-[60px] bg-white/5 border border-white/10 backdrop-blur-2xl" />
+              {/* MAIN GLASS */}
 
-              {/* WHITE */}
+              <div className="absolute w-[680px] h-[520px] rounded-[70px] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_50px_140px_rgba(0,0,0,0.5)]" />
 
-              <div className="absolute left-[5%] md:left-[10%] top-[18%]">
+              {/* CENTER ENERGY */}
 
-                <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-125" />
+              <div className="absolute w-[450px] h-[450px] bg-blue-500/20 rounded-full blur-[140px] animate-pulse" />
+
+              <div className="absolute w-[300px] h-[300px] bg-cyan-400/20 rounded-full blur-[120px]" />
+
+              {/* LIGHT LINE */}
+
+              <div className="absolute w-[540px] h-[2px] bg-gradient-to-r from-transparent via-blue-300/70 to-transparent blur-sm top-[46%]" />
+
+              {/* WHITE WALLET */}
+
+              <div className="absolute left-[0%] md:left-[4%] top-[10%] group">
+
+                {/* ENERGY */}
+
+                <div className="absolute inset-0 bg-white/20 blur-[120px] rounded-full scale-150 opacity-80" />
+
+                {/* REFLECTION */}
+
+                <div className="absolute left-[20%] top-[5%] w-[70px] h-[240px] bg-white/30 blur-[25px] rotate-[20deg] z-20 opacity-80" />
+
+                {/* SIDE GLOW */}
+
+                <div className="absolute -left-8 top-8 w-[140px] h-[260px] bg-white/20 blur-[60px] rotate-[-20deg]" />
 
                 <img
                   src="/photo2131.png"
                   alt="White Wallet"
-                  className="relative z-10 w-[220px] md:w-[330px] rotate-[-12deg]"
+                  className="relative z-10 w-[240px] md:w-[380px] rotate-[-14deg] drop-shadow-[0_50px_140px_rgba(255,255,255,0.22)] transition-all duration-500 group-hover:scale-105"
                 />
               </div>
 
-              {/* BLUE */}
+              {/* BLUE WALLET */}
 
-              <div className="absolute right-[5%] md:right-[10%] bottom-[12%]">
+              <div className="absolute right-[0%] md:right-[4%] bottom-[8%] group">
 
-                <div className="absolute inset-0 bg-blue-500/30 blur-[120px] rounded-full scale-125" />
+                {/* ENERGY */}
+
+                <div className="absolute inset-0 bg-blue-500/35 blur-[140px] rounded-full scale-150 opacity-90" />
+
+                {/* REFLECTION */}
+
+                <div className="absolute right-[18%] top-[8%] w-[70px] h-[240px] bg-cyan-200/30 blur-[25px] rotate-[18deg] z-20 opacity-80" />
+
+                {/* SIDE GLOW */}
+
+                <div className="absolute right-[-20px] bottom-0 w-[160px] h-[280px] bg-cyan-400/20 blur-[70px] rotate-[20deg]" />
 
                 <img
                   src="/photo2121.png"
                   alt="Blue Wallet"
-                  className="relative z-10 w-[220px] md:w-[330px] rotate-[12deg]"
+                  className="relative z-10 w-[240px] md:w-[380px] rotate-[14deg] drop-shadow-[0_50px_140px_rgba(37,99,235,0.45)] transition-all duration-500 group-hover:scale-105"
                 />
               </div>
+
+              {/* PARTICLES */}
+
+              <div className="particle p1"></div>
+              <div className="particle p2"></div>
+              <div className="particle p3"></div>
+              <div className="particle p4"></div>
             </div>
           </div>
         </section>
 
-        {/* PREMIUM */}
+        {/* PREMIUM LINE */}
 
-        <section className="bg-white text-[#04113A] rounded-t-[60px] px-6 md:px-20 py-28 relative z-10">
+        <section className="bg-white text-[#04113A] rounded-t-[70px] px-6 md:px-20 py-28 relative z-10">
 
           <h2 className="text-5xl font-black text-center mb-14">
             PREMIUM LINE
@@ -172,10 +216,11 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-            <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
+            <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
 
               <img
                 src="/photo2131.png"
+                alt="White Wallet"
                 className="rounded-[24px] mb-8 w-full"
               />
 
@@ -184,10 +229,11 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="bg-[#07154A] rounded-[42px] p-8 text-white">
+            <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
 
               <img
                 src="/photo2121.png"
+                alt="Blue Wallet"
                 className="rounded-[24px] mb-8 w-full"
               />
 
@@ -200,7 +246,10 @@ export default function Home() {
 
         {/* SOON */}
 
-        <section id="soon" className="px-6 md:px-20 py-28 relative z-10">
+        <section
+          id="soon"
+          className="px-6 md:px-20 py-28 relative z-10"
+        >
 
           <div className="max-w-5xl mx-auto text-center">
 
@@ -220,6 +269,42 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FOOTER */}
+
+        <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70">
+
+          <div className="max-w-7xl mx-auto flex justify-between flex-col md:flex-row gap-8">
+
+            <div>
+
+              <div className="font-black text-2xl text-white">
+                T.M.D COMMUNITY
+              </div>
+
+              <p className="text-sm mt-1">
+                Exclusive P2P CartHolders
+              </p>
+            </div>
+
+            <div>
+
+              <div className="font-semibold text-white mb-2">
+                Support
+              </div>
+
+              <a
+                href="https://t.me/managerTMD_p2p"
+                className="block hover:text-white"
+              >
+                Telegram Support
+              </a>
+
+              <p>
+                tmdsupport1@gmail.com
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
 
       <style jsx global>{`
@@ -227,17 +312,15 @@ export default function Home() {
           position: relative;
           min-height: 100vh;
           overflow: hidden;
-          background: #030816;
+          background: #020817;
           color: white;
         }
 
         .wave {
           position: absolute;
           border-radius: 9999px;
-          filter: blur(120px);
-          opacity: 0.7;
-          animation-timing-function: ease-in-out;
-          animation-iteration-count: infinite;
+          filter: blur(140px);
+          opacity: 0.65;
           mix-blend-mode: screen;
         }
 
@@ -247,26 +330,76 @@ export default function Home() {
           background: #2563eb;
           top: -250px;
           left: -150px;
-          animation: float1 16s infinite;
+          animation: float1 16s ease-in-out infinite;
         }
 
         .wave2 {
-          width: 1000px;
-          height: 1000px;
+          width: 1100px;
+          height: 1100px;
           background: #38bdf8;
-          bottom: -350px;
+          bottom: -400px;
           right: -250px;
-          animation: float2 20s infinite;
+          animation: float2 22s ease-in-out infinite;
         }
 
         .wave3 {
           width: 700px;
           height: 700px;
           background: #60a5fa;
+          top: 15%;
+          left: 35%;
+          opacity: 0.35;
+          animation: float3 18s ease-in-out infinite;
+        }
+
+        .wave4 {
+          width: 500px;
+          height: 500px;
+          background: #1d4ed8;
+          top: 40%;
+          left: 10%;
+          opacity: 0.2;
+          animation: float4 20s ease-in-out infinite;
+        }
+
+        .particle {
+          position: absolute;
+          border-radius: 999px;
+          background: white;
+          filter: blur(3px);
+          opacity: 0.8;
+        }
+
+        .p1 {
+          width: 8px;
+          height: 8px;
           top: 20%;
-          left: 30%;
-          opacity: 0.4;
-          animation: float3 18s infinite;
+          left: 45%;
+          animation: particle1 5s infinite ease-in-out;
+        }
+
+        .p2 {
+          width: 12px;
+          height: 12px;
+          top: 60%;
+          left: 55%;
+          animation: particle2 6s infinite ease-in-out;
+        }
+
+        .p3 {
+          width: 6px;
+          height: 6px;
+          top: 35%;
+          right: 25%;
+          animation: particle3 7s infinite ease-in-out;
+        }
+
+        .p4 {
+          width: 10px;
+          height: 10px;
+          bottom: 20%;
+          left: 35%;
+          animation: particle4 8s infinite ease-in-out;
         }
 
         @keyframes float1 {
@@ -274,7 +407,7 @@ export default function Home() {
             transform: translate(0, 0) scale(1);
           }
           50% {
-            transform: translate(120px, 60px) scale(1.15);
+            transform: translate(140px, 60px) scale(1.15);
           }
           100% {
             transform: translate(0, 0) scale(1);
@@ -286,7 +419,7 @@ export default function Home() {
             transform: translate(0, 0) scale(1);
           }
           50% {
-            transform: translate(-140px, -80px) scale(1.2);
+            transform: translate(-160px, -90px) scale(1.2);
           }
           100% {
             transform: translate(0, 0) scale(1);
@@ -298,10 +431,82 @@ export default function Home() {
             transform: translate(0, 0) scale(1);
           }
           50% {
-            transform: translate(70px, -60px) scale(1.1);
+            transform: translate(80px, -70px) scale(1.1);
           }
           100% {
             transform: translate(0, 0) scale(1);
+          }
+        }
+
+        @keyframes float4 {
+          0% {
+            transform: translate(0, 0) scale(1);
+          }
+          50% {
+            transform: translate(60px, 40px) scale(1.15);
+          }
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+        }
+
+        @keyframes particle1 {
+          0% {
+            transform: translateY(0px);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translateY(-20px);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0px);
+            opacity: 0.3;
+          }
+        }
+
+        @keyframes particle2 {
+          0% {
+            transform: translateY(0px);
+            opacity: 0.4;
+          }
+          50% {
+            transform: translateY(-25px);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0px);
+            opacity: 0.4;
+          }
+        }
+
+        @keyframes particle3 {
+          0% {
+            transform: translateY(0px);
+            opacity: 0.5;
+          }
+          50% {
+            transform: translateY(-18px);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0px);
+            opacity: 0.5;
+          }
+        }
+
+        @keyframes particle4 {
+          0% {
+            transform: translateY(0px);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translateY(-22px);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0px);
+            opacity: 0.3;
           }
         }
       `}</style>
