@@ -74,7 +74,7 @@ export default function Home() {
 
         {/* HERO */}
 
-        <section className="relative min-h-[100svh] flex items-center px-6 md:px-20 py-20">
+        <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
 
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
 
@@ -133,7 +133,7 @@ export default function Home() {
                     });
                   }
                 }}
-                className="bg-white text-[#04113A] rounded-[22px] px-8 py-5 font-black inline-flex items-center transition-all duration-300 active:scale-95"
+                className="bg-white text-[#04113A] rounded-[22px] px-8 py-5 font-black inline-flex items-center transition-all duration-300 hover:scale-105"
               >
                 SOON
               </button>
@@ -337,145 +337,148 @@ export default function Home() {
       </div>
 
       <style jsx global>{`
-  * {
-    box-sizing: border-box;
-  }
+        * {
+          box-sizing: border-box;
+        }
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: #020817;
-    scroll-behavior: smooth;
-  }
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+          background: #020817;
+          scroll-behavior: smooth;
+        }
 
-  body {
-    min-height: 100vh;
-  }
+        body {
+          min-height: 100vh;
+        }
 
-  .main-bg {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    background: #020817;
-    color: white;
-  }
+        .main-bg {
+          position: relative;
+          min-height: 100vh;
+          width: 100%;
+          overflow-x: hidden;
+          background: #020817;
+          color: white;
+        }
 
-  .wave {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(140px);
-    opacity: 0.65;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    z-index: 0;
-  }
+        .wave {
+          position: absolute;
+          border-radius: 9999px;
+          filter: blur(140px);
+          opacity: 0.65;
+          mix-blend-mode: screen;
+          pointer-events: none;
+          z-index: 0;
+        }
 
-  .wave1 {
-    width: 900px;
-    height: 900px;
-    background: #2563eb;
-    top: -250px;
-    left: -150px;
-    animation: float1 16s ease-in-out infinite;
-  }
+        .wave1 {
+          width: 900px;
+          height: 900px;
+          background: #2563eb;
+          top: -250px;
+          left: -150px;
+          animation: float1 16s ease-in-out infinite;
+        }
 
-  .wave2 {
-    width: 1100px;
-    height: 1100px;
-    background: #38bdf8;
-    bottom: -400px;
-    right: -250px;
-    animation: float2 22s ease-in-out infinite;
-  }
+        .wave2 {
+          width: 1100px;
+          height: 1100px;
+          background: #38bdf8;
+          bottom: -400px;
+          right: -250px;
+          animation: float2 22s ease-in-out infinite;
+        }
 
-  .wave3 {
-    width: 700px;
-    height: 700px;
-    background: #60a5fa;
-    top: 15%;
-    left: 35%;
-    opacity: 0.35;
-    animation: float3 18s ease-in-out infinite;
-  }
+        .wave3 {
+          width: 700px;
+          height: 700px;
+          background: #60a5fa;
+          top: 15%;
+          left: 35%;
+          opacity: 0.35;
+          animation: float3 18s ease-in-out infinite;
+        }
 
-  @keyframes float1 {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
+        @keyframes float1 {
+          0% {
+            transform: translate(0, 0) scale(1);
+          }
 
-    50% {
-      transform: translate(140px, 60px) scale(1.15);
-    }
+          50% {
+            transform: translate(140px, 60px) scale(1.15);
+          }
 
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-  }
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+        }
 
-  @keyframes float2 {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
+        @keyframes float2 {
+          0% {
+            transform: translate(0, 0) scale(1);
+          }
 
-    50% {
-      transform: translate(-160px, -90px) scale(1.2);
-    }
+          50% {
+            transform: translate(-160px, -90px) scale(1.2);
+          }
 
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-  }
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+        }
 
-  @keyframes float3 {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
+        @keyframes float3 {
+          0% {
+            transform: translate(0, 0) scale(1);
+          }
 
-    50% {
-      transform: translate(80px, -70px) scale(1.1);
-    }
+          50% {
+            transform: translate(80px, -70px) scale(1.1);
+          }
 
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-  }
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+        }
 
-  @media (max-width: 768px) {
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
+        @media (max-width: 768px) {
+          html,
+          body {
+            overflow-x: hidden;
+            width: 100%;
+          }
 
-    .main-bg {
-      overflow-x: hidden;
-    }
+          .main-bg {
+            overflow-x: hidden;
+          }
 
-    .wave {
-      filter: blur(100px);
-      opacity: 0.45;
-    }
+          .wave {
+            filter: blur(100px);
+            opacity: 0.45;
+          }
 
-    .wave1 {
-      width: 500px;
-      height: 500px;
-      top: -120px;
-      left: -120px;
-    }
+          .wave1 {
+            width: 500px;
+            height: 500px;
+            top: -120px;
+            left: -120px;
+          }
 
-    .wave2 {
-      width: 650px;
-      height: 650px;
-      right: -250px;
-      bottom: -250px;
-    }
+          .wave2 {
+            width: 650px;
+            height: 650px;
+            right: -250px;
+            bottom: -250px;
+          }
 
-    .wave3 {
-      width: 400px;
-      height: 400px;
-    }
-  }
-`}</style>
+          .wave3 {
+            width: 400px;
+            height: 400px;
+          }
+        }
+      `}</style>
+    </>
+  );
+}
