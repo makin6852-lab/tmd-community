@@ -1,15 +1,5 @@
 'use client';
-<div className="fixed inset-0 overflow-hidden -z-10">
 
-  <div className="absolute top-[-200px] left-[-100px] w-[700px] h-[700px] bg-blue-500/30 rounded-full blur-[160px] animate-pulse" />
-
-  <div className="absolute bottom-[-250px] right-[-150px] w-[800px] h-[800px] bg-cyan-400/20 rounded-full blur-[180px] animate-pulse" />
-
-  <div className="absolute top-[20%] left-[35%] w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[140px] animate-pulse" />
-
-</div>
-
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 function Countdown() {
@@ -55,7 +45,7 @@ function Countdown() {
       ].map(([label, value]) => (
         <div
           key={String(label)}
-          className="bg-white/[0.05] backdrop-blur-[25px] border border-white/10 rounded-[34px] py-10"
+          className="bg-white/[0.05] border border-white/10 backdrop-blur-[25px] rounded-[34px] py-10"
         >
           <div className="text-5xl md:text-6xl font-black">
             {value as number}
@@ -72,69 +62,37 @@ function Countdown() {
 
 export default function Home() {
   return (
-    <div className="bg-[#04113A] text-white min-h-screen overflow-hidden relative">
+    <div className="relative bg-[#020817] text-white min-h-screen overflow-hidden">
 
-      {/* YANDEX MUSIC STYLE WAVES */}
+      {/* WAVES BACKGROUND */}
+
       <div className="absolute inset-0 overflow-hidden -z-10">
 
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-[-150px] left-[-100px] w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[140px]"
-        />
+        <div className="absolute top-[-300px] left-[-150px] w-[950px] h-[950px] bg-blue-500/30 rounded-full blur-[180px] animate-pulse" />
 
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-            x: [0, -60, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute bottom-[-180px] right-[-120px] w-[700px] h-[700px] bg-cyan-400/10 rounded-full blur-[170px]"
-        />
+        <div className="absolute bottom-[-350px] right-[-200px] w-[1100px] h-[1100px] bg-cyan-400/20 rounded-full blur-[220px] animate-pulse" />
 
-        <motion.div
-          animate={{
-            scale: [1, 1.25, 1],
-            opacity: [0.4, 0.7, 0.4],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-[25%] left-[35%] w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[130px]"
-        />
+        <div className="absolute top-[25%] left-[30%] w-[700px] h-[700px] bg-blue-400/10 rounded-full blur-[180px] animate-pulse" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_35%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_40%)]" />
+
+        <div className="absolute inset-0 backdrop-blur-[60px]" />
+
       </div>
 
       {/* HERO */}
+
       <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20">
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
 
           {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+
+          <div>
 
             {/* BADGE */}
-            <div className="inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 backdrop-blur-[25px] rounded-full px-5 py-3 mb-8">
+
+            <div className="inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 backdrop-blur-[20px] rounded-full px-5 py-3 mb-8">
 
               <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
 
@@ -144,22 +102,14 @@ export default function Home() {
             </div>
 
             {/* LOGO */}
+
             <div className="mb-10">
-              <div className="relative w-[120px] h-[120px] rounded-[36px] bg-white/[0.05] border border-white/10 backdrop-blur-[30px] flex items-center justify-center shadow-[0_25px_60px_rgba(0,0,0,0.35)] overflow-hidden">
 
-                <motion.div
-                  animate={{
-                    opacity: [0.2, 0.5, 0.2],
-                    scale: [1, 1.15, 1],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                  }}
-                  className="absolute w-[160px] h-[160px] bg-blue-400/20 blur-[60px]"
-                />
+              <div className="relative w-[120px] h-[120px] rounded-[38px] bg-white/[0.05] border border-white/10 backdrop-blur-[25px] flex items-center justify-center overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
 
-                <span className="text-4xl font-black tracking-[0.08em] z-10">
+                <div className="absolute w-[220px] h-[220px] bg-blue-500/20 blur-[70px] animate-pulse" />
+
+                <span className="text-4xl font-black tracking-[0.1em] z-10">
                   TMD
                 </span>
               </div>
@@ -186,70 +136,47 @@ export default function Home() {
             >
               SOON
             </a>
-          </motion.div>
+          </div>
 
           {/* RIGHT */}
+
           <div className="relative flex items-center justify-center min-h-[650px]">
 
-            {/* glass background */}
-            <div className="absolute w-[580px] h-[420px] rounded-[55px] bg-white/[0.04] border border-white/10 backdrop-blur-[35px]" />
+            {/* GLASS */}
 
-            {/* white wallet */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{
-                opacity: 1,
-                y: [0, -10, 0],
-              }}
-              transition={{
-                opacity: { duration: 1 },
-                y: {
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                },
-              }}
-              className="absolute left-[5%] md:left-[10%] top-[18%]"
-            >
-              <div className="absolute inset-0 bg-white/20 blur-[90px] rounded-full scale-125" />
+            <div className="absolute w-[620px] h-[460px] rounded-[60px] bg-white/[0.04] border border-white/10 backdrop-blur-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.45)]" />
+
+            {/* WHITE WALLET */}
+
+            <div className="absolute left-[5%] md:left-[10%] top-[18%]">
+
+              <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-125 animate-pulse" />
 
               <img
                 src="/photo2131.png"
                 alt="White Wallet"
-                className="relative z-10 w-[220px] md:w-[320px] rotate-[-12deg] drop-shadow-[0_35px_80px_rgba(255,255,255,0.18)]"
+                className="relative z-10 w-[220px] md:w-[330px] rotate-[-12deg] drop-shadow-[0_40px_100px_rgba(255,255,255,0.18)]"
               />
-            </motion.div>
+            </div>
 
-            {/* blue wallet */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{
-                opacity: 1,
-                y: [0, 10, 0],
-              }}
-              transition={{
-                opacity: { duration: 1.2 },
-                y: {
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                },
-              }}
-              className="absolute right-[5%] md:right-[10%] bottom-[12%]"
-            >
-              <div className="absolute inset-0 bg-blue-500/25 blur-[100px] rounded-full scale-125" />
+            {/* BLUE WALLET */}
+
+            <div className="absolute right-[5%] md:right-[10%] bottom-[12%]">
+
+              <div className="absolute inset-0 bg-blue-500/30 blur-[120px] rounded-full scale-125 animate-pulse" />
 
               <img
                 src="/photo2121.png"
                 alt="Blue Wallet"
-                className="relative z-10 w-[220px] md:w-[320px] rotate-[12deg] drop-shadow-[0_35px_80px_rgba(37,99,235,0.30)]"
+                className="relative z-10 w-[220px] md:w-[330px] rotate-[12deg] drop-shadow-[0_40px_100px_rgba(37,99,235,0.40)]"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* PREMIUM LINE */}
+
       <section className="bg-white text-[#04113A] rounded-t-[60px] px-6 md:px-20 py-28 relative z-10">
 
         <h2 className="text-5xl font-black text-center mb-14">
@@ -259,8 +186,10 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
           <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
+
             <img
               src="/photo2131.png"
+              alt="White Wallet"
               className="rounded-[24px] mb-8 w-full"
             />
 
@@ -270,8 +199,10 @@ export default function Home() {
           </div>
 
           <div className="bg-[#07154A] rounded-[42px] p-8 text-white shadow-2xl">
+
             <img
               src="/photo2121.png"
+              alt="Blue Wallet"
               className="rounded-[24px] mb-8 w-full"
             />
 
@@ -284,9 +215,15 @@ export default function Home() {
       </section>
 
       {/* SOON */}
-      <section id="soon" className="px-6 md:px-20 py-28">
 
-        <div className="max-w-5xl mx-auto text-center">
+      <section
+        id="soon"
+        className="px-6 md:px-20 py-28 relative"
+      >
+
+        <div className="absolute inset-0 bg-blue-500/5 blur-[120px]" />
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
 
           <p className="uppercase tracking-[0.4em] text-white/50 mb-4">
             Exclusive Access
@@ -305,11 +242,13 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
+
       <footer className="border-t border-white/10 py-12 px-6 md:px-20 text-white/70">
 
         <div className="max-w-7xl mx-auto flex justify-between flex-col md:flex-row gap-8">
 
           <div>
+
             <div className="font-black text-2xl text-white">
               T.M.D COMMUNITY
             </div>
@@ -320,6 +259,7 @@ export default function Home() {
           </div>
 
           <div>
+
             <div className="font-semibold text-white mb-2">
               Support
             </div>
