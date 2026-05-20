@@ -37,7 +37,7 @@ function Countdown() {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
       {[
         ['Days', timeLeft.days],
         ['Hours', timeLeft.hours],
@@ -46,13 +46,13 @@ function Countdown() {
       ].map(([label, value]) => (
         <div
           key={String(label)}
-          className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[34px] py-10 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+          className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[28px] py-8 md:py-10"
         >
-          <div className="text-5xl md:text-6xl font-black">
+          <div className="text-4xl md:text-6xl font-black">
             {value as number}
           </div>
 
-          <div className="text-white/50 uppercase tracking-[0.25em] text-sm mt-3">
+          <div className="text-white/50 uppercase tracking-[0.25em] text-xs md:text-sm mt-3">
             {label}
           </div>
         </div>
@@ -64,18 +64,17 @@ function Countdown() {
 export default function Home() {
   return (
     <>
-      <div className="main-bg">
+      <div className="main-bg overflow-x-hidden">
 
         {/* WAVES */}
 
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
         <div className="wave wave3"></div>
-        <div className="wave wave4"></div>
 
         {/* HERO */}
 
-        <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
+        <section className="relative min-h-[100svh] flex items-center px-6 md:px-20 py-20">
 
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
 
@@ -83,7 +82,7 @@ export default function Home() {
 
             <div>
 
-              <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
+              <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8">
 
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
 
@@ -96,19 +95,19 @@ export default function Home() {
 
               <div className="mb-10">
 
-                <div className="relative w-[130px] h-[130px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+                <div className="relative w-[110px] h-[110px] md:w-[130px] md:h-[130px] rounded-[36px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden">
 
-                  <div className="absolute w-[220px] h-[220px] bg-blue-500/30 blur-[80px] animate-pulse" />
+                  <div className="absolute w-[160px] h-[160px] bg-blue-500/20 blur-[60px]" />
 
-                  <div className="absolute top-0 left-[-40px] w-[70px] h-[220px] bg-white/20 rotate-[20deg] blur-[20px]" />
+                  <div className="absolute top-0 left-[-40px] w-[50px] h-[180px] bg-white/20 rotate-[20deg] blur-[16px]" />
 
-                  <span className="text-4xl font-black tracking-[0.12em] z-10">
+                  <span className="text-3xl md:text-4xl font-black tracking-[0.12em] z-10">
                     TMD
                   </span>
                 </div>
               </div>
 
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-6">
+              <h1 className="text-5xl md:text-8xl font-black leading-[0.9] mb-6">
                 T.M.D <br />
                 COMMUNITY
               </h1>
@@ -128,13 +127,13 @@ export default function Home() {
                   const section = document.getElementById('soon');
 
                   if (section) {
-                    window.scrollTo({
-                      top: section.offsetTop - 20,
+                    section.scrollIntoView({
                       behavior: 'smooth',
+                      block: 'start',
                     });
                   }
                 }}
-                className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300 shadow-[0_20px_60px_rgba(255,255,255,0.12)]"
+                className="bg-white text-[#04113A] rounded-[22px] px-8 py-5 font-black inline-flex items-center transition-all duration-300 active:scale-95"
               >
                 SOON
               </button>
@@ -142,47 +141,37 @@ export default function Home() {
 
             {/* RIGHT */}
 
-            <div className="relative flex items-center justify-center min-h-[720px]">
+            <div className="relative flex items-center justify-center min-h-[420px] md:min-h-[720px]">
 
-              <div className="absolute w-[680px] h-[520px] rounded-[70px] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_50px_140px_rgba(0,0,0,0.5)]" />
+              <div className="absolute w-[90%] md:w-[680px] h-[360px] md:h-[520px] rounded-[50px] bg-white/5 border border-white/10 backdrop-blur-xl" />
 
-              <div className="absolute w-[450px] h-[450px] bg-blue-500/20 rounded-full blur-[140px] animate-pulse" />
+              <div className="absolute w-[260px] md:w-[450px] h-[260px] md:h-[450px] bg-blue-500/20 rounded-full blur-[80px]" />
 
-              <div className="absolute w-[300px] h-[300px] bg-cyan-400/20 rounded-full blur-[120px]" />
-
-              <div className="absolute w-[540px] h-[2px] bg-gradient-to-r from-transparent via-blue-300/70 to-transparent blur-sm top-[46%]" />
+              <div className="absolute w-[180px] md:w-[300px] h-[180px] md:h-[300px] bg-cyan-400/10 rounded-full blur-[60px]" />
 
               {/* WHITE WALLET */}
 
-              <div className="absolute left-[0%] md:left-[4%] top-[10%] group">
+              <div className="absolute left-[0%] md:left-[4%] top-[10%]">
 
-                <div className="absolute inset-0 bg-white/20 blur-[120px] rounded-full scale-150 opacity-80" />
-
-                <div className="absolute left-[20%] top-[5%] w-[70px] h-[240px] bg-white/30 blur-[25px] rotate-[20deg] z-20 opacity-80" />
-
-                <div className="absolute -left-8 top-8 w-[140px] h-[260px] bg-white/20 blur-[60px] rotate-[-20deg]" />
+                <div className="absolute inset-0 bg-white/10 blur-[60px] rounded-full scale-150" />
 
                 <img
                   src="/photo2131.png"
                   alt="White Wallet"
-                  className="relative z-10 w-[240px] md:w-[380px] rotate-[-14deg] drop-shadow-[0_50px_140px_rgba(255,255,255,0.22)] transition-all duration-500 group-hover:scale-105"
+                  className="relative z-10 w-[180px] md:w-[380px] rotate-[-14deg] drop-shadow-[0_30px_80px_rgba(255,255,255,0.12)]"
                 />
               </div>
 
               {/* BLUE WALLET */}
 
-              <div className="absolute right-[0%] md:right-[4%] bottom-[8%] group">
+              <div className="absolute right-[0%] md:right-[4%] bottom-[8%]">
 
-                <div className="absolute inset-0 bg-blue-500/35 blur-[140px] rounded-full scale-150 opacity-90" />
-
-                <div className="absolute right-[18%] top-[8%] w-[70px] h-[240px] bg-cyan-200/30 blur-[25px] rotate-[18deg] z-20 opacity-80" />
-
-                <div className="absolute right-[-20px] bottom-0 w-[160px] h-[280px] bg-cyan-400/20 blur-[70px] rotate-[20deg]" />
+                <div className="absolute inset-0 bg-blue-500/20 blur-[60px] rounded-full scale-150" />
 
                 <img
                   src="/photo2121.png"
                   alt="Blue Wallet"
-                  className="relative z-10 w-[240px] md:w-[380px] rotate-[14deg] drop-shadow-[0_50px_140px_rgba(37,99,235,0.45)] transition-all duration-500 group-hover:scale-105"
+                  className="relative z-10 w-[180px] md:w-[380px] rotate-[14deg] drop-shadow-[0_30px_80px_rgba(37,99,235,0.3)]"
                 />
               </div>
             </div>
@@ -191,13 +180,13 @@ export default function Home() {
 
         {/* PREMIUM LINE */}
 
-        <section className="relative px-6 md:px-20 py-32 z-10 overflow-hidden">
+        <section className="relative px-6 md:px-20 py-24 md:py-32 z-10 overflow-hidden">
 
           <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff] via-[#edf4ff] to-[#dfeeff]" />
 
-          <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-[140px]" />
+          <div className="absolute top-[-200px] left-[-200px] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-300/20 rounded-full blur-[80px]" />
 
-          <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-[140px]" />
+          <div className="absolute bottom-[-200px] right-[-200px] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-cyan-300/10 rounded-full blur-[80px]" />
 
           <div className="relative z-10 max-w-7xl mx-auto">
 
@@ -207,87 +196,61 @@ export default function Home() {
                 Luxury Collection
               </p>
 
-              <h2 className="text-5xl md:text-7xl font-black text-[#04113A] mb-6">
+              <h2 className="text-4xl md:text-7xl font-black text-[#04113A] mb-6">
                 PREMIUM LINE
               </h2>
 
               <div className="w-[180px] h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto" />
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-10">
+            <div className="grid lg:grid-cols-2 gap-8">
 
-              {/* WHITE CARD */}
+              {/* WHITE */}
 
-              <div className="relative group overflow-hidden rounded-[50px] bg-white border border-white/60 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.12)] p-10 transition-all duration-500 hover:scale-[1.02]">
+              <div className="relative overflow-hidden rounded-[40px] bg-white border border-white/60 p-8 md:p-10">
 
-                <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-white rounded-full blur-[100px] opacity-80" />
-
-                <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-blue-200/40 rounded-full blur-[120px]" />
-
-                <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/40 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                <div className="relative z-10 text-[#04113A]/20 text-8xl font-black mb-6">
-                  01
-                </div>
+                <div className="absolute top-[-100px] left-[-100px] w-[220px] h-[220px] bg-white rounded-full blur-[60px]" />
 
                 <div className="relative z-10 flex justify-center mb-10">
-
-                  <div className="absolute w-[240px] h-[240px] bg-white blur-[100px]" />
 
                   <img
                     src="/photo2131.png"
                     alt="White Wallet"
-                    className="relative z-10 w-[280px] rotate-[-10deg] drop-shadow-[0_40px_100px_rgba(0,0,0,0.18)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2"
+                    className="w-[220px] md:w-[280px] rotate-[-10deg]"
                   />
                 </div>
 
-                <div className="relative z-10">
+                <h3 className="text-3xl md:text-4xl font-black text-[#04113A] mb-4">
+                  WHITE WALLET
+                </h3>
 
-                  <h3 className="text-4xl font-black text-[#04113A] mb-4">
-                    WHITE WALLET
-                  </h3>
-
-                  <p className="text-[#04113A]/70 text-lg leading-relaxed mb-8">
-                    Luxury minimal edition created for premium members with private access and elite identity.
-                  </p>
-                </div>
+                <p className="text-[#04113A]/70 text-base md:text-lg leading-relaxed">
+                  Luxury minimal edition created for premium members.
+                </p>
               </div>
 
-              {/* BLUE CARD */}
+              {/* BLUE */}
 
-              <div className="relative group overflow-hidden rounded-[50px] bg-[#07154A] border border-white/10 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.35)] p-10 transition-all duration-500 hover:scale-[1.02]">
+              <div className="relative overflow-hidden rounded-[40px] bg-[#07154A] border border-white/10 p-8 md:p-10">
 
-                <div className="absolute top-[-100px] right-[-100px] w-[320px] h-[320px] bg-blue-500/30 rounded-full blur-[120px]" />
-
-                <div className="absolute bottom-[-120px] left-[-120px] w-[260px] h-[260px] bg-cyan-400/20 rounded-full blur-[120px]" />
-
-                <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                <div className="relative z-10 text-white/10 text-8xl font-black mb-6">
-                  02
-                </div>
+                <div className="absolute top-[-100px] right-[-100px] w-[220px] h-[220px] bg-blue-500/20 rounded-full blur-[80px]" />
 
                 <div className="relative z-10 flex justify-center mb-10">
-
-                  <div className="absolute w-[240px] h-[240px] bg-blue-500/30 blur-[120px]" />
 
                   <img
                     src="/photo2121.png"
                     alt="Blue Wallet"
-                    className="relative z-10 w-[280px] rotate-[10deg] drop-shadow-[0_40px_120px_rgba(37,99,235,0.5)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2"
+                    className="w-[220px] md:w-[280px] rotate-[10deg]"
                   />
                 </div>
 
-                <div className="relative z-10">
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
+                  BLUE WALLET
+                </h3>
 
-                  <h3 className="text-4xl font-black text-white mb-4">
-                    BLUE WALLET
-                  </h3>
-
-                  <p className="text-white/70 text-lg leading-relaxed mb-8">
-                    Signature edition with deep premium aesthetics and exclusive community privileges.
-                  </p>
-                </div>
+                <p className="text-white/70 text-base md:text-lg leading-relaxed">
+                  Signature edition with exclusive premium access.
+                </p>
               </div>
             </div>
           </div>
@@ -315,8 +278,6 @@ export default function Home() {
             </p>
 
             <Countdown />
-
-            {/* PHRASE */}
 
             <div className="mt-20">
 
@@ -355,11 +316,11 @@ export default function Home() {
               <div className="flex flex-col gap-4">
 
                 <a
-                  href="https://t.me/TMDsupport"
+                  href="https://t.me/managerTMD_p2p"
                   className="flex items-center gap-3 hover:text-white transition"
                 >
                   <Send size={16} />
-                  TMDsupport
+                  @managerTMD_p2p
                 </a>
 
                 <a
@@ -376,18 +337,25 @@ export default function Home() {
       </div>
 
       <style jsx global>{`
-        html {
-          scroll-behavior: auto;
+        * {
+          box-sizing: border-box;
         }
 
+        html,
         body {
+          margin: 0;
+          padding: 0;
           overflow-x: hidden;
+          background: #020817;
+          scroll-behavior: smooth;
         }
 
         .main-bg {
           position: relative;
+          width: 100%;
           min-height: 100vh;
           overflow-x: hidden;
+          overflow-y: visible;
           background: #020817;
           color: white;
         }
@@ -395,94 +363,93 @@ export default function Home() {
         .wave {
           position: absolute;
           border-radius: 9999px;
-          filter: blur(140px);
-          opacity: 0.65;
-          mix-blend-mode: screen;
+          filter: blur(120px);
+          opacity: 0.35;
+          pointer-events: none;
         }
 
         .wave1 {
-          width: 900px;
-          height: 900px;
+          width: 600px;
+          height: 600px;
           background: #2563eb;
-          top: -250px;
+          top: -150px;
           left: -150px;
-          animation: float1 16s ease-in-out infinite;
+          animation: wave1 14s ease-in-out infinite;
         }
 
         .wave2 {
-          width: 1100px;
-          height: 1100px;
+          width: 700px;
+          height: 700px;
           background: #38bdf8;
-          bottom: -400px;
-          right: -250px;
-          animation: float2 22s ease-in-out infinite;
+          bottom: -250px;
+          right: -200px;
+          animation: wave2 18s ease-in-out infinite;
         }
 
         .wave3 {
-          width: 700px;
-          height: 700px;
-          background: #60a5fa;
-          top: 15%;
-          left: 35%;
-          opacity: 0.35;
-          animation: float3 18s ease-in-out infinite;
-        }
-
-        .wave4 {
           width: 500px;
           height: 500px;
-          background: #1d4ed8;
-          top: 40%;
-          left: 10%;
-          opacity: 0.2;
-          animation: float4 20s ease-in-out infinite;
+          background: #60a5fa;
+          top: 30%;
+          left: 30%;
+          opacity: 0.15;
+          animation: wave3 20s ease-in-out infinite;
         }
 
-        @keyframes float1 {
+        @keyframes wave1 {
           0% {
-            transform: translate(0, 0) scale(1);
+            transform: translate(0px, 0px) scale(1);
           }
           50% {
-            transform: translate(140px, 60px) scale(1.15);
+            transform: translate(80px, 40px) scale(1.08);
           }
           100% {
-            transform: translate(0, 0) scale(1);
-          }
-        }
-
-        @keyframes float2 {
-          0% {
-            transform: translate(0, 0) scale(1);
-          }
-          50% {
-            transform: translate(-160px, -90px) scale(1.2);
-          }
-          100% {
-            transform: translate(0, 0) scale(1);
+            transform: translate(0px, 0px) scale(1);
           }
         }
 
-        @keyframes float3 {
+        @keyframes wave2 {
           0% {
-            transform: translate(0, 0) scale(1);
+            transform: translate(0px, 0px) scale(1);
           }
           50% {
-            transform: translate(80px, -70px) scale(1.1);
+            transform: translate(-100px, -60px) scale(1.1);
           }
           100% {
-            transform: translate(0, 0) scale(1);
+            transform: translate(0px, 0px) scale(1);
           }
         }
 
-        @keyframes float4 {
+        @keyframes wave3 {
           0% {
-            transform: translate(0, 0) scale(1);
+            transform: translate(0px, 0px) scale(1);
           }
           50% {
-            transform: translate(60px, 40px) scale(1.15);
+            transform: translate(50px, -40px) scale(1.06);
           }
           100% {
-            transform: translate(0, 0) scale(1);
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .wave {
+            filter: blur(90px);
+          }
+
+          .wave1 {
+            width: 350px;
+            height: 350px;
+          }
+
+          .wave2 {
+            width: 420px;
+            height: 420px;
+          }
+
+          .wave3 {
+            width: 300px;
+            height: 300px;
           }
         }
       `}</style>
