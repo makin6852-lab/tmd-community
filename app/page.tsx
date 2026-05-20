@@ -1,40 +1,105 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
+function Countdown() {
+  const calculateTimeLeft = () => {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 30);
+
+    const difference = targetDate.getTime() - new Date().getTime();
+
+    if (difference <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
+      {[
+        ['Days', timeLeft.days],
+        ['Hours', timeLeft.hours],
+        ['Minutes', timeLeft.minutes],
+        ['Seconds', timeLeft.seconds],
+      ].map(([label, value]) => (
+        <div
+          key={String(label)}
+          className="
+            relative
+            overflow-hidden
+            bg-white/5
+            border
+            border-white/10
+            backdrop-blur-xl
+            rounded-[34px]
+            py-10
+            shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+          "
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
+
+          <div className="relative z-10 text-5xl md:text-6xl font-black">
+            {String(value).padStart(2, '0')}
+          </div>
+
+          <div className="relative z-10 text-white/50 uppercase tracking-[0.25em] text-sm mt-3">
+            {label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
       <div className="main-bg">
 
         {/* WAVES */}
-
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
         <div className="wave wave3"></div>
         <div className="wave wave4"></div>
 
         {/* HERO */}
-
         <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
-
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
 
             {/* LEFT */}
-
             <div>
 
               <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-5 py-3 mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
-
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-
                 <span className="uppercase tracking-[0.35em] text-xs text-white/70">
                   Exclusive Private Community
                 </span>
               </div>
 
               {/* LOGO */}
-
               <div className="mb-10">
-
                 <div className="relative w-[130px] h-[130px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
 
                   <div className="absolute w-[220px] h-[220px] bg-blue-500/30 blur-[80px] animate-pulse" />
@@ -48,7 +113,8 @@ export default function Home() {
               </div>
 
               <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-6">
-                T.M.D <br />
+                T.M.D
+                <br />
                 COMMUNITY
               </h1>
 
@@ -66,12 +132,11 @@ export default function Home() {
                 href="#soon"
                 className="bg-white text-[#04113A] rounded-[24px] px-8 py-5 font-black inline-flex items-center hover:scale-105 transition-all duration-300 shadow-[0_20px_60px_rgba(255,255,255,0.12)]"
               >
-                SOON
+                APPLICATIONS
               </a>
             </div>
 
             {/* RIGHT */}
-
             <div className="relative flex items-center justify-center min-h-[720px]">
 
               <div className="absolute w-[680px] h-[520px] rounded-[70px] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_50px_140px_rgba(0,0,0,0.5)]" />
@@ -83,7 +148,6 @@ export default function Home() {
               <div className="absolute w-[540px] h-[2px] bg-gradient-to-r from-transparent via-blue-300/70 to-transparent blur-sm top-[46%]" />
 
               {/* WHITE WALLET */}
-
               <div className="absolute left-[0%] md:left-[4%] top-[10%] group">
 
                 <div className="absolute inset-0 bg-white/20 blur-[120px] rounded-full scale-150 opacity-80" />
@@ -100,7 +164,6 @@ export default function Home() {
               </div>
 
               {/* BLUE WALLET */}
-
               <div className="absolute right-[0%] md:right-[4%] bottom-[8%] group">
 
                 <div className="absolute inset-0 bg-blue-500/35 blur-[140px] rounded-full scale-150 opacity-90" />
@@ -117,7 +180,6 @@ export default function Home() {
               </div>
 
               {/* PARTICLES */}
-
               <div className="particle p1"></div>
               <div className="particle p2"></div>
               <div className="particle p3"></div>
@@ -126,208 +188,101 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PREMIUM LINE */}
-
-        <section className="relative px-6 md:px-20 py-32 z-10 overflow-hidden">
-
-          <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff] via-[#edf4ff] to-[#dfeeff]" />
-
-          <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-[140px]" />
-
-          <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-[140px]" />
-
-          <div className="relative z-10 max-w-7xl mx-auto">
-
-            <div className="text-center mb-20">
-
-              <p className="uppercase tracking-[0.4em] text-[#07154A]/50 mb-4">
-                Luxury Collection
-              </p>
-
-              <h2 className="text-5xl md:text-7xl font-black text-[#04113A] mb-6">
-                PREMIUM LINE
-              </h2>
-
-              <div className="w-[180px] h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto" />
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-10">
-
-              {/* WHITE CARD */}
-
-              <div className="relative group overflow-hidden rounded-[50px] bg-white border border-white/60 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.12)] p-10 transition-all duration-500 hover:scale-[1.02]">
-
-                <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-white rounded-full blur-[100px] opacity-80" />
-
-                <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-blue-200/40 rounded-full blur-[120px]" />
-
-                <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/40 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                <div className="relative z-10 text-[#04113A]/20 text-8xl font-black mb-6">
-                  01
-                </div>
-
-                <div className="relative z-10 flex justify-center mb-10">
-
-                  <div className="absolute w-[240px] h-[240px] bg-white blur-[100px]" />
-
-                  <img
-                    src="/photo2131.png"
-                    alt="White Wallet"
-                    className="relative z-10 w-[280px] rotate-[-10deg] drop-shadow-[0_40px_100px_rgba(0,0,0,0.18)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2"
-                  />
-                </div>
-
-                <div className="relative z-10">
-
-                  <h3 className="text-4xl font-black text-[#04113A] mb-4">
-                    WHITE WALLET
-                  </h3>
-
-                  <p className="text-[#04113A]/70 text-lg leading-relaxed">
-                    Luxury minimal edition created for premium members with private access and elite identity.
-                  </p>
-                </div>
-              </div>
-
-              {/* BLUE CARD */}
-
-              <div className="relative group overflow-hidden rounded-[50px] bg-[#07154A] border border-white/10 backdrop-blur-2xl shadow-[0_40px_120px_rgba(0,0,0,0.35)] p-10 transition-all duration-500 hover:scale-[1.02]">
-
-                <div className="absolute top-[-100px] right-[-100px] w-[320px] h-[320px] bg-blue-500/30 rounded-full blur-[120px]" />
-
-                <div className="absolute bottom-[-120px] left-[-120px] w-[260px] h-[260px] bg-cyan-400/20 rounded-full blur-[120px]" />
-
-                <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px] group-hover:left-[120%] transition-all duration-1000" />
-
-                <div className="relative z-10 text-white/10 text-8xl font-black mb-6">
-                  02
-                </div>
-
-                <div className="relative z-10 flex justify-center mb-10">
-
-                  <div className="absolute w-[240px] h-[240px] bg-blue-500/30 blur-[120px]" />
-
-                  <img
-                    src="/photo2121.png"
-                    alt="Blue Wallet"
-                    className="relative z-10 w-[280px] rotate-[10deg] drop-shadow-[0_40px_120px_rgba(37,99,235,0.5)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2"
-                  />
-                </div>
-
-                <div className="relative z-10">
-
-                  <h3 className="text-4xl font-black text-white mb-4">
-                    BLUE WALLET
-                  </h3>
-
-                  <p className="text-white/70 text-lg leading-relaxed">
-                    Signature edition with deep premium aesthetics and exclusive community privileges.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* APPLICATIONS */}
-
         <section
           id="soon"
           className="px-6 md:px-20 py-32 relative z-10 overflow-hidden"
         >
 
-          <div className="absolute inset-0 bg-gradient-to-b from-[#020817] via-[#06143d] to-[#020817]" />
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 pointer-events-none">
 
-          <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[140px]" />
+            <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-500/10 rounded-full blur-[180px]" />
 
-          <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-[140px]" />
+            <div className="absolute bottom-[-250px] right-[-100px] w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-[160px]" />
+          </div>
 
-          <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="relative z-10 max-w-5xl mx-auto text-center">
 
-            <div className="text-center mb-16">
+            <div className="mb-14">
 
-              <p className="uppercase tracking-[0.45em] text-white/40 mb-5">
-                Private Access
+              <p className="uppercase tracking-[0.45em] text-white/40 mb-6 text-sm">
+                Applications Open In
               </p>
 
-              <h2 className="text-5xl md:text-8xl font-black leading-[0.9] mb-6">
-                Applications
+              <h2 className="text-5xl md:text-7xl font-black leading-[0.95] mb-6">
+                JOIN THE
                 <br />
-                Open In
+                PRIVATE WAITLIST
               </h2>
 
-              <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto">
-                Limited access for selected members only.
-                Waitlist applications are currently unavailable.
+              <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
+                Access to the T.M.D founders community will become available after the countdown ends.
               </p>
             </div>
 
             {/* COUNTDOWN */}
+            <Countdown />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto mb-16">
+            {/* LOCKED BUTTON */}
+            <div className="mt-16 flex flex-col items-center">
 
-              {[
-                ['Days', 30],
-                ['Hours', 0],
-                ['Minutes', 0],
-                ['Seconds', 0],
-              ].map(([label, value]) => (
-                <div
-                  key={String(label)}
-                  className="relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[36px] py-10 shadow-[0_30px_80px_rgba(0,0,0,0.45)]"
-                >
+              <button
+                disabled
+                className="
+                  relative
+                  overflow-hidden
+                  group
+                  bg-white/[0.04]
+                  border
+                  border-white/10
+                  text-white/40
+                  rounded-[28px]
+                  px-12
+                  py-6
+                  font-black
+                  tracking-[0.2em]
+                  backdrop-blur-2xl
+                  cursor-not-allowed
+                  shadow-[0_30px_80px_rgba(0,0,0,0.45)]
+                "
+              >
+                {/* SHINE */}
+                <div className="absolute top-0 left-[-120px] w-[90px] h-full bg-white/10 rotate-[18deg] blur-[18px] animate-[shine_4s_linear_infinite]" />
 
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent" />
+                {/* INNER GLOW */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-transparent" />
 
-                  <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px]" />
+                <span className="relative z-10 flex items-center gap-4">
 
-                  <div className="relative z-10">
+                  {/* RED DOT */}
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                  </span>
 
-                    <div className="text-5xl md:text-7xl font-black tracking-tight">
-                      {value as number}
-                    </div>
+                  JOIN WAITLIST
 
-                    <div className="text-white/40 uppercase tracking-[0.3em] text-xs md:text-sm mt-4">
-                      {label}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                  {/* LOCK */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 opacity-60"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2h-1V7a5 5 0 00-10 0v4H6a2 2 0 00-2 2v6a2 2 0 002 2zm3-10V7a3 3 0 016 0v4H9z"
+                    />
+                  </svg>
+                </span>
+              </button>
 
-            {/* BUTTON */}
-
-            <div className="flex justify-center">
-
-              <div className="relative group">
-
-                <div className="absolute inset-0 bg-white/10 blur-[60px] rounded-[34px] opacity-70" />
-
-                <button
-                  disabled
-                  className="relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[34px] px-12 py-6 text-white/45 font-black tracking-[0.18em] cursor-not-allowed shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
-                >
-
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-
-                  <div className="absolute top-0 left-[-120px] w-[120px] h-full bg-white/10 rotate-[18deg] blur-[25px]" />
-
-                  <div className="relative z-10 flex items-center gap-4">
-
-                    <span>
-                      JOIN WAITLIST
-                    </span>
-
-                    <span className="text-[10px] md:text-xs px-4 py-2 rounded-full bg-white/10 border border-white/10 tracking-[0.28em] text-white/35">
-                      LOCKED
-                    </span>
-                  </div>
-                </button>
-
-                <div className="text-center text-white/25 text-sm tracking-[0.18em] mt-5 uppercase">
-                  Applications are not available yet
-                </div>
+              <div className="mt-6 text-white/30 uppercase tracking-[0.35em] text-xs">
+                Waitlist Locked • Applications Not Yet Available
               </div>
             </div>
           </div>
@@ -335,24 +290,10 @@ export default function Home() {
       </div>
 
       <style jsx global>{`
-        * {
-          box-sizing: border-box;
-        }
-
-        html,
-        body {
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-          background: #020817;
-          color: white;
-          scroll-behavior: smooth;
-        }
-
         .main-bg {
           position: relative;
           min-height: 100vh;
-          overflow-x: hidden;
+          overflow: hidden;
           background: #020817;
           color: white;
         }
@@ -551,15 +492,12 @@ export default function Home() {
           }
         }
 
-        @media (max-width: 768px) {
-          .wave {
-            filter: blur(100px);
+        @keyframes shine {
+          0% {
+            left: -120px;
           }
-
-          .wave1,
-          .wave2 {
-            width: 500px;
-            height: 500px;
+          100% {
+            left: 140%;
           }
         }
       `}</style>
