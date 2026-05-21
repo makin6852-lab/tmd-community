@@ -114,7 +114,7 @@ export default function Home() {
               </h2>
               <p className="text-white/50 text-sm mb-10">Эксклюзивное закрытое сообщество</p>
 
-              <p className="text-white/60 text-lg max-w-xl mb-10">
+              <p className="text-white/60 text-lg max-w-xl">
                 A highly curated private circle for founders, builders, and visionaries.
               </p>
             </div>
@@ -155,26 +155,23 @@ export default function Home() {
 
             <Countdown />
 
-            {/* 🔥 Улучшенная прозрачная кнопка */}
+            {/* Прозрачная кнопка "JOIN WAITLIST" */}
             <div className="mt-20">
               <button
                 disabled
-                className="group relative mx-auto flex items-center justify-center gap-3 px-14 py-6 text-lg font-black tracking-wider border border-red-500/40 bg-white/5 hover:bg-white/10 backdrop-blur-3xl rounded-3xl transition-all duration-300 cursor-not-allowed w-full max-w-[340px]"
+                className="group mx-auto flex items-center justify-center gap-4 px-16 py-7 text-xl font-black tracking-wider border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-3xl rounded-3xl transition-all duration-300 cursor-not-allowed w-full max-w-md"
               >
-                {/* Красный индикатор */}
                 <div className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                 </div>
-
-                <span className="line-through decoration-red-500/60 decoration-2">
-                  JOIN THE WAITLIST
-                </span>
+                
+                <span>JOIN WAITLIST</span>
               </button>
             </div>
 
             <div className="mt-6 text-white/40 uppercase tracking-[0.35em] text-sm">
-              Applications closed • Limited seats
+              Applications currently closed
             </div>
           </div>
         </section>
