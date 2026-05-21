@@ -96,7 +96,6 @@ export default function Home() {
                 <span className="uppercase tracking-[0.4em] text-xs text-white/70">EXCLUSIVE PRIVATE COMMUNITY</span>
               </div>
 
-              {/* TMD Logo — чуть меньше */}
               <div className="mb-10">
                 <div className="relative w-[150px] h-[150px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(37,99,235,0.45)]">
                   <div className="absolute w-[260px] h-[260px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-[85px] animate-pulse" />
@@ -118,12 +117,6 @@ export default function Home() {
               <p className="text-white/60 text-lg max-w-xl mb-10">
                 A highly curated private circle for founders, builders, and visionaries.
               </p>
-
-              <div className="flex flex-wrap gap-4 text-sm uppercase tracking-widest text-white/50">
-                <div>● Members Only</div>
-                <div>● Closed Network</div>
-                <div>● Founders Circle</div>
-              </div>
             </div>
 
             {/* Wallets */}
@@ -162,20 +155,26 @@ export default function Home() {
 
             <Countdown />
 
-            {/* Прозрачно-синяя кнопка с зачёркиванием */}
+            {/* 🔥 Улучшенная прозрачная кнопка */}
             <div className="mt-20">
               <button
                 disabled
-                className="group relative w-full max-w-md mx-auto overflow-hidden border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/15 backdrop-blur-2xl text-white font-black text-xl py-8 rounded-[32px] transition-all duration-300 cursor-not-allowed"
+                className="group relative mx-auto flex items-center justify-center gap-3 px-14 py-6 text-lg font-black tracking-wider border border-red-500/40 bg-white/5 hover:bg-white/10 backdrop-blur-3xl rounded-3xl transition-all duration-300 cursor-not-allowed w-full max-w-[340px]"
               >
-                <span className="relative z-10 line-through decoration-2 decoration-red-500/70">
+                {/* Красный индикатор */}
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                </div>
+
+                <span className="line-through decoration-red-500/60 decoration-2">
                   JOIN THE WAITLIST
                 </span>
               </button>
             </div>
 
             <div className="mt-6 text-white/40 uppercase tracking-[0.35em] text-sm">
-              Currently closed • Limited seats only
+              Applications closed • Limited seats
             </div>
           </div>
         </section>
