@@ -54,10 +54,9 @@ function Countdown() {
   if (isEnded) {
     return (
       <div className="text-center py-12">
-        <div className="text-6xl md:text-7xl font-black text-emerald-400 mb-4 tracking-tight">
+        <div className="text-6xl md:text-7xl font-black text-emerald-400 mb-4">
           APPLICATIONS ARE NOW OPEN
         </div>
-        <p className="text-white/70 text-xl">Welcome to the T.M.D Inner Circle</p>
       </div>
     );
   }
@@ -65,10 +64,7 @@ function Countdown() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
       {items.map((item) => (
-        <div
-          key={item.label}
-          className="relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl rounded-[34px] py-10 shadow-[0_20px_60px_rgba(0,0,0,0.35)] hover:border-white/20 transition-all"
-        >
+        <div key={item.label} className="relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl rounded-[34px] py-10 shadow-[0_20px_60px_rgba(0,0,0,0.35)] hover:border-white/20 transition-all">
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
           <div className="relative z-10 text-5xl md:text-6xl font-black">
             {String(item.value).padStart(2, '0')}
@@ -86,7 +82,6 @@ export default function Home() {
   return (
     <>
       <main className="main-bg">
-        {/* Waves */}
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
         <div className="wave wave3"></div>
@@ -98,15 +93,14 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-6 py-3 mb-8">
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                <span className="uppercase tracking-[0.4em] text-xs text-white/70 font-medium">
-                  EXCLUSIVE PRIVATE COMMUNITY
-                </span>
+                <span className="uppercase tracking-[0.4em] text-xs text-white/70">EXCLUSIVE PRIVATE COMMUNITY</span>
               </div>
 
+              {/* TMD Logo — чуть меньше */}
               <div className="mb-10">
-                <div className="relative w-[170px] h-[170px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(37,99,235,0.5)]">
-                  <div className="absolute w-[280px] h-[280px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-[90px] animate-pulse" />
-                  <span className="text-7xl font-black tracking-[0.05em] z-10 text-white drop-shadow-[0_0_40px_rgba(147,197,253,0.7)]">
+                <div className="relative w-[150px] h-[150px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(37,99,235,0.45)]">
+                  <div className="absolute w-[260px] h-[260px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-[85px] animate-pulse" />
+                  <span className="text-6xl font-black tracking-[0.05em] z-10 text-white drop-shadow-[0_0_35px_rgba(147,197,253,0.6)]">
                     TMD
                   </span>
                 </div>
@@ -116,20 +110,19 @@ export default function Home() {
                 T.M.D<br />COMMUNITY
               </h1>
 
-              <h2 className="text-3xl md:text-5xl font-bold text-white/90 mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-white/90 mb-2 leading-tight">
                 For the few.<br />Not for the many.
               </h2>
+              <p className="text-white/50 text-sm mb-10">Эксклюзивное закрытое сообщество</p>
 
-              <p className="text-white/60 text-lg max-w-xl mb-12">
-                A highly curated private circle for founders, builders, and visionaries. 
-                Limited access. Real connections. Unmatched value.
+              <p className="text-white/60 text-lg max-w-xl mb-10">
+                A highly curated private circle for founders, builders, and visionaries.
               </p>
 
               <div className="flex flex-wrap gap-4 text-sm uppercase tracking-widest text-white/50">
                 <div>● Members Only</div>
                 <div>● Closed Network</div>
                 <div>● Founders Circle</div>
-                <div>● Elite Access</div>
               </div>
             </div>
 
@@ -165,31 +158,24 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-black leading-[0.95] mb-8">
               JOIN THE<br />PRIVATE WAITLIST
             </h2>
-
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-16">
-              Only a limited number of seats will be granted.<br />
-              Be among the chosen few to enter the T.M.D Inner Circle.
-            </p>
+            <p className="text-white/50 text-sm mb-16">Ограниченное количество мест</p>
 
             <Countdown />
 
-            {/* 🔥 Премиальная кнопка (выглядит дорого, но видно что закрыта) */}
+            {/* Прозрачно-синяя кнопка с зачёркиванием */}
             <div className="mt-20">
               <button
                 disabled
-                className="group relative overflow-hidden bg-gradient-to-b from-white to-white/90 text-[#04113A] font-black text-xl px-20 py-8 rounded-[32px] shadow-[0_25px_70px_rgba(255,255,255,0.15)] border border-white/30 transition-all duration-300 cursor-not-allowed"
+                className="group relative w-full max-w-md mx-auto overflow-hidden border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/15 backdrop-blur-2xl text-white font-black text-xl py-8 rounded-[32px] transition-all duration-300 cursor-not-allowed"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                
-                <span className="relative z-10 flex items-center justify-center gap-3">
+                <span className="relative z-10 line-through decoration-2 decoration-red-500/70">
                   JOIN THE WAITLIST
-                  <span className="text-base opacity-70">🔒</span>
                 </span>
               </button>
             </div>
 
-            <div className="mt-6 text-white/40 uppercase tracking-[0.4em] text-sm">
-              Applications currently closed • Limited seats
+            <div className="mt-6 text-white/40 uppercase tracking-[0.35em] text-sm">
+              Currently closed • Limited seats only
             </div>
           </div>
         </section>
