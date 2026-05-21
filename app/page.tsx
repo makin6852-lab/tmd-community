@@ -91,27 +91,15 @@ export default function Home() {
                 </span>
               </div>
 
-              <div className="mb-10">
-                <div className="relative w-[130px] h-[130px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
-                  <div className="absolute w-[220px] h-[220px] bg-blue-500/30 blur-[80px] animate-pulse" />
-                  <div className="absolute top-0 left-[-40px] w-[70px] h-[220px] bg-white/20 rotate-[20deg] blur-[20px]" />
-                  <span className="text-4xl font-black tracking-[0.12em] z-10">
-                    TMD
-                  </span>
-                </div>
-              </div>
-
               <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-6">
-                T.M.D<br />
-                COMMUNITY
+                T.M.D<br />COMMUNITY
               </h1>
 
-              <h2 className="text-3xl md:text-5xl font-bold text-white/90 mb-5 leading-tight">
-                Private Access<br />
-                Community
+              <h2 className="text-3xl md:text-5xl font-bold text-white/90 mb-5">
+                Private Access<br />Community
               </h2>
 
-              <p className="text-white/50 text-lg max-w-xl mb-10 tracking-wide">
+              <p className="text-white/50 text-lg max-w-xl mb-10">
                 Закрытое сообщество T.M.D
               </p>
 
@@ -123,23 +111,22 @@ export default function Home() {
                   className="
                     relative overflow-hidden rounded-[26px] px-8 py-5 font-black inline-flex items-center text-white
                     bg-blue-500/10 border border-blue-400/30 backdrop-blur-2xl
-                    shadow-[0_0_80px_rgba(59,130,246,0.35)]
+                    shadow-[0_0_90px_rgba(59,130,246,0.40)]
                     hover:scale-105 transition-all duration-300 group
                   "
                 >
-                  {/* shine */}
+                  {/* liquid shine */}
                   <div className="
                     absolute inset-0 opacity-70
                     bg-gradient-to-r from-transparent via-white/25 to-transparent
                     translate-x-[-130%]
                     group-hover:translate-x-[130%]
-                    transition-transform duration-1000
-                    blur-xl
+                    transition-transform duration-1000 blur-xl
                   " />
 
                   {/* glow */}
-                  <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl" />
-                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-400/20 rounded-full blur-3xl" />
+                  <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/40 rounded-full blur-3xl" />
+                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-400/30 rounded-full blur-3xl" />
 
                   <span className="relative z-10 tracking-[0.25em]">
                     PRIVATE ACCESS
@@ -154,26 +141,22 @@ export default function Home() {
 
             </div>
 
-            {/* RIGHT (UNCHANGED FULL EFFECTS PRESERVED) */}
+            {/* RIGHT */}
             <div className="relative flex items-center justify-center min-h-[720px]">
 
               <div className="absolute w-[680px] h-[520px] rounded-[70px] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_50px_140px_rgba(0,0,0,0.5)]" />
 
               <div className="absolute w-[450px] h-[450px] bg-blue-500/20 rounded-full blur-[140px] animate-pulse" />
-
               <div className="absolute w-[300px] h-[300px] bg-cyan-400/20 rounded-full blur-[120px]" />
 
-              <div className="absolute left-[0%] md:left-[4%] top-[10%] group">
-                <div className="absolute inset-0 bg-white/20 blur-[120px] rounded-full scale-150 opacity-80" />
-                <img src="/photo2131.png" className="relative z-10 w-[240px] md:w-[380px] rotate-[-14deg]" />
+              <div className="absolute left-[4%] top-[10%] group">
+                <img src="/photo2131.png" className="w-[360px] rotate-[-14deg]" />
               </div>
 
-              <div className="absolute right-[0%] md:right-[4%] bottom-[8%] group">
-                <div className="absolute inset-0 bg-blue-500/35 blur-[140px] rounded-full scale-150 opacity-90" />
-                <img src="/photo2121.png" className="relative z-10 w-[240px] md:w-[380px] rotate-[14deg]" />
+              <div className="absolute right-[4%] bottom-[8%] group">
+                <img src="/photo2121.png" className="w-[360px] rotate-[14deg]" />
               </div>
 
-              {/* PARTICLES */}
               <div className="particle p1"></div>
               <div className="particle p2"></div>
               <div className="particle p3"></div>
@@ -184,22 +167,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* COUNTDOWN SECTION */}
+        {/* SECTION */}
         <section id="soon" className="px-6 md:px-20 py-32 relative z-10 overflow-hidden">
 
           <div className="relative z-10 max-w-5xl mx-auto text-center">
 
-            <p className="uppercase tracking-[0.45em] text-white/40 mb-6 text-sm">
-              Applications Open In
-            </p>
-
-            <h2 className="text-5xl md:text-7xl font-black leading-[0.95] mb-6">
-              JOIN THE<br />
-              PRIVATE WAITLIST
+            <h2 className="text-5xl md:text-7xl font-black mb-6">
+              JOIN THE PRIVATE WAITLIST
             </h2>
 
-            <p className="text-white/50 text-lg max-w-2xl mx-auto mb-16">
-              Access to the T.M.D founders community will become available after the countdown ends.
+            <p className="text-white/50 mb-16">
+              Access will open after countdown
             </p>
 
             <Countdown />
@@ -209,6 +187,53 @@ export default function Home() {
         </section>
 
       </main>
+
+      {/* ✅ FIXED GLOBAL CSS */}
+      <style jsx global>{`
+        .main-bg {
+          min-height: 100vh;
+          background: #020817;
+          color: white;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .wave {
+          position: absolute;
+          border-radius: 9999px;
+          filter: blur(140px);
+          opacity: 0.6;
+          mix-blend-mode: screen;
+        }
+
+        .wave1 { width: 900px; height: 900px; background: #2563eb; top: -250px; left: -150px; animation: float1 16s infinite; }
+        .wave2 { width: 1100px; height: 1100px; background: #38bdf8; bottom: -400px; right: -250px; animation: float2 22s infinite; }
+        .wave3 { width: 700px; height: 700px; background: #60a5fa; top: 15%; left: 35%; opacity: 0.3; animation: float3 18s infinite; }
+        .wave4 { width: 500px; height: 500px; background: #1d4ed8; top: 40%; left: 10%; opacity: 0.2; animation: float4 20s infinite; }
+
+        .particle {
+          position: absolute;
+          border-radius: 999px;
+          background: white;
+          filter: blur(3px);
+          opacity: 0.8;
+        }
+
+        .p1 { width: 8px; height: 8px; top: 20%; left: 45%; animation: particle1 5s infinite; }
+        .p2 { width: 12px; height: 12px; top: 60%; left: 55%; animation: particle2 6s infinite; }
+        .p3 { width: 6px; height: 6px; top: 35%; right: 25%; animation: particle3 7s infinite; }
+        .p4 { width: 10px; height: 10px; bottom: 20%; left: 35%; animation: particle4 8s infinite; }
+
+        @keyframes float1 { 50% { transform: translate(140px,60px) scale(1.1); } }
+        @keyframes float2 { 50% { transform: translate(-160px,-90px) scale(1.2); } }
+        @keyframes float3 { 50% { transform: translate(80px,-70px) scale(1.1); } }
+        @keyframes float4 { 50% { transform: translate(60px,40px) scale(1.1); } }
+
+        @keyframes particle1 { 50% { transform: translateY(-20px); opacity: 1; } }
+        @keyframes particle2 { 50% { transform: translateY(-25px); opacity: 1; } }
+        @keyframes particle3 { 50% { transform: translateY(-18px); opacity: 1; } }
+        @keyframes particle4 { 50% { transform: translateY(-22px); opacity: 1; } }
+      `}</style>
     </>
   );
 }
