@@ -86,18 +86,17 @@ export default function Home() {
   return (
     <>
       <main className="main-bg">
-        {/* Animated Waves */}
+        {/* Waves */}
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
         <div className="wave wave3"></div>
         <div className="wave wave4"></div>
 
-        {/* HERO SECTION */}
+        {/* HERO */}
         <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
-            {/* LEFT SIDE */}
             <div>
-              <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-6 py-3 mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+              <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-6 py-3 mb-8">
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
                 <span className="uppercase tracking-[0.4em] text-xs text-white/70 font-medium">
                   EXCLUSIVE PRIVATE COMMUNITY
@@ -107,7 +106,6 @@ export default function Home() {
               <div className="mb-10">
                 <div className="relative w-[170px] h-[170px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(37,99,235,0.5)]">
                   <div className="absolute w-[280px] h-[280px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-[90px] animate-pulse" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
                   <span className="text-7xl font-black tracking-[0.05em] z-10 text-white drop-shadow-[0_0_40px_rgba(147,197,253,0.7)]">
                     TMD
                   </span>
@@ -135,7 +133,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT SIDE - WALLETS */}
+            {/* Wallets */}
             <div className="relative flex items-center justify-center min-h-[720px]">
               <div className="absolute w-[680px] h-[520px] rounded-[70px] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_50px_140px_rgba(0,0,0,0.5)]" />
               <div className="absolute w-[450px] h-[450px] bg-blue-500/20 rounded-full blur-[140px] animate-pulse" />
@@ -175,21 +173,23 @@ export default function Home() {
 
             <Countdown />
 
-            {/* Кнопка в конце */}
+            {/* 🔥 Премиальная кнопка (выглядит дорого, но видно что закрыта) */}
             <div className="mt-20">
               <button
                 disabled
-                className="group relative overflow-hidden bg-white text-[#04113A] hover:bg-white/90 rounded-[28px] px-16 py-7 font-black text-lg tracking-wider transition-all duration-300 shadow-[0_20px_60px_rgba(255,255,255,0.15)]"
+                className="group relative overflow-hidden bg-gradient-to-b from-white to-white/90 text-[#04113A] font-black text-xl px-20 py-8 rounded-[32px] shadow-[0_25px_70px_rgba(255,255,255,0.15)] border border-white/30 transition-all duration-300 cursor-not-allowed"
               >
-                <span className="relative z-10 flex items-center gap-3">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                
+                <span className="relative z-10 flex items-center justify-center gap-3">
                   JOIN THE WAITLIST
+                  <span className="text-base opacity-70">🔒</span>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </button>
             </div>
 
-            <div className="mt-8 text-white/30 uppercase tracking-[0.35em] text-xs">
-              Applications not yet available • Limited spots
+            <div className="mt-6 text-white/40 uppercase tracking-[0.4em] text-sm">
+              Applications currently closed • Limited seats
             </div>
           </div>
         </section>
@@ -219,10 +219,10 @@ export default function Home() {
         .wave4 { width: 500px; height: 500px; background: #1e40af; top: 40%; left: 10%; opacity: 0.3; animation: float4 22s ease-in-out infinite, waveColorShift 26s ease infinite; }
 
         @keyframes waveColorShift {
-          0%   { background: #2563eb; }
-          25%  { background: #3b82f6; }
-          50%  { background: #60a5fa; }
-          75%  { background: #1e88e5; }
+          0% { background: #2563eb; }
+          25% { background: #3b82f6; }
+          50% { background: #60a5fa; }
+          75% { background: #1e88e5; }
           100% { background: #2563eb; }
         }
 
