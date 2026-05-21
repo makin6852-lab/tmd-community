@@ -92,12 +92,11 @@ export default function Home() {
         <div className="wave wave3"></div>
         <div className="wave wave4"></div>
 
-        {/* HERO */}
+        {/* HERO SECTION */}
         <section className="relative min-h-screen flex items-center px-6 md:px-20 py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
             {/* LEFT SIDE */}
             <div>
-              {/* Premium Badge */}
               <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full px-6 py-3 mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
                 <span className="uppercase tracking-[0.4em] text-xs text-white/70 font-medium">
@@ -105,12 +104,11 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* TMD Logo - More Eye-Catching */}
               <div className="mb-10">
-                <div className="relative w-[160px] h-[160px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(37,99,235,0.4)]">
-                  <div className="absolute w-[260px] h-[260px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-[90px] animate-pulse" />
+                <div className="relative w-[170px] h-[170px] rounded-[42px] bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center overflow-hidden shadow-[0_30px_100px_rgba(37,99,235,0.5)]">
+                  <div className="absolute w-[280px] h-[280px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-[90px] animate-pulse" />
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
-                  <span className="text-6xl font-black tracking-[0.08em] z-10 text-white drop-shadow-[0_0_30px_rgba(147,197,253,0.6)]">
+                  <span className="text-7xl font-black tracking-[0.05em] z-10 text-white drop-shadow-[0_0_40px_rgba(147,197,253,0.7)]">
                     TMD
                   </span>
                 </div>
@@ -129,11 +127,11 @@ export default function Home() {
                 Limited access. Real connections. Unmatched value.
               </p>
 
-              {/* Новые премиум фразы */}
-              <div className="flex flex-wrap gap-3 text-sm uppercase tracking-widest text-white/50">
+              <div className="flex flex-wrap gap-4 text-sm uppercase tracking-widest text-white/50">
                 <div>● Members Only</div>
                 <div>● Closed Network</div>
                 <div>● Founders Circle</div>
+                <div>● Elite Access</div>
               </div>
             </div>
 
@@ -145,12 +143,12 @@ export default function Home() {
 
               <div className="absolute left-0 md:left-[4%] top-[10%] group">
                 <div className="absolute inset-0 bg-white/20 blur-[120px] rounded-full scale-150" />
-                <img src="/photo2131.png" alt="White Wallet" className="relative z-10 w-[240px] md:w-[380px] rotate-[-14deg] transition-all duration-500 group-hover:scale-105 group-hover:rotate-[-8deg]" />
+                <img src="/photo2131.png" alt="White Wallet" className="relative z-10 w-[240px] md:w-[380px] rotate-[-14deg] transition-all duration-500 group-hover:scale-105" />
               </div>
 
               <div className="absolute right-0 md:right-[4%] bottom-[8%] group">
                 <div className="absolute inset-0 bg-blue-500/35 blur-[140px] rounded-full scale-150" />
-                <img src="/photo2121.png" alt="Blue Wallet" className="relative z-10 w-[240px] md:w-[380px] rotate-[14deg] transition-all duration-500 group-hover:scale-105 group-hover:rotate-[8deg]" />
+                <img src="/photo2121.png" alt="Blue Wallet" className="relative z-10 w-[240px] md:w-[380px] rotate-[14deg] transition-all duration-500 group-hover:scale-105" />
               </div>
             </div>
           </div>
@@ -171,21 +169,27 @@ export default function Home() {
             </h2>
 
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-16">
-              Only a limited number of seats will be granted. Be among the first to enter the T.M.D Inner Circle.
+              Only a limited number of seats will be granted.<br />
+              Be among the chosen few to enter the T.M.D Inner Circle.
             </p>
 
             <Countdown />
 
-            <div className="mt-16 flex flex-col items-center">
+            {/* Кнопка в конце */}
+            <div className="mt-20">
               <button
                 disabled
-                className="relative overflow-hidden bg-white/[0.04] border border-white/10 text-white/40 rounded-[28px] px-14 py-6 font-black tracking-[0.2em] backdrop-blur-2xl cursor-not-allowed"
+                className="group relative overflow-hidden bg-white text-[#04113A] hover:bg-white/90 rounded-[28px] px-16 py-7 font-black text-lg tracking-wider transition-all duration-300 shadow-[0_20px_60px_rgba(255,255,255,0.15)]"
               >
-                WAITLIST CLOSED FOR NOW
+                <span className="relative z-10 flex items-center gap-3">
+                  JOIN THE WAITLIST
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </button>
-              <div className="mt-6 text-white/30 uppercase tracking-[0.35em] text-xs">
-                Only serious applicants will be considered
-              </div>
+            </div>
+
+            <div className="mt-8 text-white/30 uppercase tracking-[0.35em] text-xs">
+              Applications not yet available • Limited spots
             </div>
           </div>
         </section>
